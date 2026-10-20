@@ -1,801 +1,1675 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Siddharth</title>
-	<link rel="shortcut icon" href="assets/images/favicon.ico" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Siddharth Pilli — AI Researcher & Builder</title>
+  <meta name="title" content="Siddharth Pilli — AI Researcher & Builder">
+  <meta name="description" content="Asia's youngest data scientist. 19-year-old studying Data Science & AI at Dublin City University. Machine learning engineer & AI product builder (ex-smallest.ai, IIT Hyderabad, IIIT Hyderabad). Co-founder of sahAIam & universis.tech.">
+  <meta name="author" content="Siddharth Pilli">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-	<meta name="title" content="Siddharth Pilli">
-	<meta name="description"
-		content="Siddharth Pilli is a 15-year-old Indian, Asia’s youngest Data scientist, currently working as a Data Scientist at Infinity Learn, an edtech company by Sri-Chaitanya, which helps students on achieving their dreams by cracking competitive exams like NEET and JEE and also working at IIIT Hyderabad as an Research Engineer.
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillisiddharth.github.io/">
+  <meta property="og:title" content="Siddharth Pilli — AI Researcher & Builder">
+  <meta property="og:description" content="Asia's youngest data scientist. Dublin City University. ex-smallest.ai, IIT Hyderabad, IIIT Hyderabad. Co-founder of sahAIam & universis.tech.">
+  <meta property="og:image" content="assets/uploads/sid.jpeg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Siddharth Pilli — AI Researcher & Builder">
+  <meta property="twitter:description" content="Asia's youngest data scientist. Machine learning engineer & AI product builder.">
+  <meta property="twitter:image" content="assets/uploads/sid.jpeg">
 
-		">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Siddharth Pilli">
-	<meta property="og:description"
-		content="Siddharth Pilli is a 15-year-old Indian, Asia’s youngest Data scientist, currently working as a Data Scientist at Infinity Learn, an edtech company by Sri-Chaitanya, which helps students on achieving their dreams by cracking competitive exams like NEET and JEE and also working at IIIT Hyderabad as an Research Engineer.">
-	<meta property="og:image" content="/assets/uploads/pp.jpg">
+  <style>
+    :root {
+      --t: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --mut: #5c5c5c;
+      --line: #e8e8e8;
+      --line-subtle: #f0f0f0;
+      --ph: #f5f5f7;
+      --card-bg: #ffffff;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 24px -10px rgba(0,0,0,0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 24px 44px -14px rgba(0,0,0,0.18);
+      --pill-bg: #f4f4f5;
+      --tag-bg: #f4f4f5;
+      --accent: #0a0a0a;
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://hemesh.tech/">
-	<meta property="twitter:title" content="Siddharth Pilli - hemesh.tech">
-	<meta property="twitter:description"
-		content="Siddharth Pilli is a 15-year-old Indian, Asia’s youngest Data scientist, currently working as a Data Scientist at Infinity Learn, an edtech company by Sri-Chaitanya, which helps students on achieving their dreams by cracking competitive exams like NEET and JEE and also working at IIIT Hyderabad as an Research Engineer.">
-	<meta property="twitter:image" content="/assets/uploads/pp.jpg">
+    [data-theme="dark"] {
+      --bg: #0d0e11;
+      --fg: #f4f4f6;
+      --mut: #9fa2ac;
+      --line: #22252c;
+      --line-subtle: #191b20;
+      --ph: #16181d;
+      --card-bg: #13151a;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 10px 24px -10px rgba(0,0,0,0.5);
+      --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.6), 0 24px 48px -12px rgba(0,0,0,0.7);
+      --pill-bg: #1c1e24;
+      --tag-bg: #1c1e24;
+      --accent: #f4f4f6;
+      color-scheme: dark;
+    }
 
-	<!-- <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-		data-id="hemeshch" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FFDD00"
-		data-position="Right" data-x_margin="18" data-y_margin="18"></script> -->
+    html {
+      background: var(--bg);
+      scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+      scroll-behavior: smooth;
+    }
 
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: background-color var(--t), color var(--t);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Sticky Header */
+    header {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+      transition: background-color var(--t), border-color var(--t);
+    }
+
+    [data-theme="dark"] header {
+      background: rgba(13, 14, 17, 0.88);
+    }
+
+    header .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 22px;
+      color: var(--mut);
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      transition: color var(--t);
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    .theme-toggle {
+      all: unset;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mut);
+      border: 1px solid var(--line);
+      transition: color var(--t), border-color var(--t), background-color var(--t);
+    }
+
+    .theme-toggle:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+      background: var(--pill-bg);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 14px;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6.5vw, 68px);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+    }
+
+    .sub {
+      color: var(--mut);
+      margin: 0 0 32px;
+      font-size: 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      padding-top: 56px;
+      padding-bottom: 56px;
+    }
+
+    .lead {
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 44ch;
+      margin: 0 0 28px;
+      color: var(--fg);
+    }
+
+    .lead-muted {
+      color: var(--mut);
+      font-weight: 400;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 9px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--fg);
+      background: transparent;
+      color: var(--fg);
+      cursor: pointer;
+      transition: background-color var(--t), color var(--t), transform var(--t), border-color var(--t);
+    }
+
+    .pill.solid {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .pill:hover {
+      background: var(--fg);
+      color: var(--bg);
+      transform: translateY(-1px);
+    }
+
+    .pill.solid:hover {
+      background: transparent;
+      color: var(--fg);
+    }
+
+    .hero-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--mut);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .hero-socials a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color var(--t);
+    }
+
+    .hero-socials a:hover {
+      color: var(--fg);
+    }
+
+    /* Interactive Collage */
+    .collage {
+      position: relative;
+      height: 440px;
+      width: 100%;
+    }
+
+    .tile {
+      all: unset;
+      cursor: pointer;
+      position: absolute;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 5px solid var(--bg);
+      outline: 1px solid var(--line);
+      background: var(--ph);
+      box-shadow: 0 12px 30px -10px rgba(0,0,0,0.22);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, z-index 0.35s ease;
+    }
+
+    .tile:focus-visible,
+    .card:focus-visible,
+    .btn:focus-visible,
+    .fr:focus-visible,
+    .post:focus-visible {
+      outline: 3px solid var(--fg);
+      outline-offset: 3px;
+    }
+
+    .t1 {
+      width: 54%;
+      aspect-ratio: 3/4;
+      left: 0;
+      top: 0;
+      transform: rotate(-3.5deg);
+      z-index: 2;
+    }
+
+    .t2 {
+      width: 52%;
+      aspect-ratio: 1;
+      right: 0;
+      top: 6%;
+      transform: rotate(3deg);
+      z-index: 1;
+    }
+
+    .t3 {
+      width: 58%;
+      aspect-ratio: 4/3;
+      left: 20%;
+      bottom: 0;
+      transform: rotate(-1.5deg);
+      z-index: 3;
+    }
+
+    .tile:hover {
+      z-index: 10;
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 0 24px 48px -12px rgba(0,0,0,0.4);
+    }
+
+    .tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.7) 100%);
+      opacity: 0;
+      transition: opacity var(--t);
+      display: flex;
+      align-items: flex-end;
+      padding: 14px 16px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .tile:hover .tile-overlay {
+      opacity: 1;
+    }
+
+    .ph {
+      background: var(--ph);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mut);
+      font-size: 13px;
+    }
+
+    .ph img, .thumb img, .im img, .big img, .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Timeline Section (#latest) */
+    .tl {
+      display: grid;
+      gap: 22px;
+      padding-left: 32px;
+      border-left: 2px solid var(--line);
+      margin-left: 10px;
+      position: relative;
+    }
+
+    .ev {
+      position: relative;
+    }
+
+    .ev::before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--fg);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--line);
+      transition: transform var(--t), background-color var(--t);
+    }
+
+    .ev:hover::before {
+      transform: scale(1.2);
+    }
+
+    .post {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 22px;
+      padding: 12px;
+      border-radius: 18px;
+      overflow: hidden;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .post:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--fg);
+    }
+
+    .post .im {
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--ph);
+    }
+
+    .post .tx {
+      padding: 10px 16px 10px 0;
+      align-self: center;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .post-tag {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--mut);
+    }
+
+    .post .dt {
+      color: var(--mut);
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+
+    .post h3 {
+      margin: 2px 0 6px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .post p {
+      margin: 0;
+      color: var(--mut);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    /* Projects Grid Section (#projects) */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      padding: 12px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--fg);
+    }
+
+    .thumb {
+      aspect-ratio: 16/10;
+      background: var(--ph);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .cb {
+      padding: 14px 6px 6px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .cb-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .cb h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .cb p {
+      margin: 0 0 12px;
+      color: var(--mut);
+      font-size: 14px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .chip {
+      display: inline-block;
+      background: var(--tag-bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--mut);
+    }
+
+    /* Experience Section (#experience) */
+    .exp-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .exp-item {
+      padding: 22px 26px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--card-bg);
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+
+    .exp-item:hover {
+      border-color: var(--fg);
+      box-shadow: var(--card-shadow);
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px 16px;
+      margin-bottom: 6px;
+    }
+
+    .exp-role {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-role a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .exp-period {
+      font-size: 13.5px;
+      color: var(--mut);
+      font-weight: 500;
+    }
+
+    .exp-location {
+      font-size: 13.5px;
+      color: var(--mut);
+      margin-bottom: 12px;
+    }
+
+    .exp-bullets {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--mut);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 6px;
+    }
+
+    .exp-bullets li strong {
+      color: var(--fg);
+    }
+
+    /* Education & Skills Section */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+    }
+
+    .edu-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .edu-card {
+      padding: 18px 22px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--card-bg);
+    }
+
+    .edu-school {
+      font-weight: 700;
+      font-size: 16.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-date {
+      font-size: 13px;
+      color: var(--mut);
+      font-weight: 500;
+    }
+
+    .edu-detail {
+      font-size: 14px;
+      color: var(--mut);
+      margin-top: 4px;
+    }
+
+    .skills-block {
+      display: grid;
+      gap: 18px;
+    }
+
+    .skill-cat h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--mut);
+      margin-bottom: 8px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 4px 12px;
+      background: var(--pill-bg);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    /* Awards Wall Section (#awards) */
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .fr {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: block;
+      border-radius: 18px;
+      padding: 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .fr .im {
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--ph);
+    }
+
+    .fr:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--fg);
+    }
+
+    .plaque {
+      padding: 12px 6px 4px;
+    }
+
+    .plaque b {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .plaque span {
+      color: var(--mut);
+      font-size: 13.5px;
+    }
+
+    /* Contact Section (#contact) */
+    .contact-box {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--mut);
+    }
+
+    .contact-item a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+      color: var(--mut);
+      font-size: 14px;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Interactive Fullscreen Viewer (#viewer) */
+    #viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      overflow-y: auto;
+      padding: 32px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewer[hidden] {
+      display: none !important;
+    }
+
+    .viewer-dialog {
+      background: var(--bg);
+      color: var(--fg);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: 0 32px 72px -16px rgba(0,0,0,0.4);
+      max-width: 1080px;
+      width: 100%;
+      overflow: hidden;
+      animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .vbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--mut);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .vbody {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 36px;
+      padding: 32px 28px;
+      align-items: start;
+    }
+
+    .big {
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--ph);
+      border: 1px solid var(--line);
+    }
+
+    .big img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .vinfo h2 {
+      margin: 10px 0 12px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .vinfo p {
+      color: var(--mut);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+
+    .tog {
+      display: flex;
+      gap: 8px;
+      margin: 0 0 24px;
+    }
+
+    .btn {
+      all: unset;
+      cursor: pointer;
+      border: 1px solid var(--fg);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-weight: 600;
+      font-size: 13.5px;
+      color: var(--fg);
+      transition: background-color var(--t), color var(--t);
+    }
+
+    .btn:hover, .btn[aria-pressed="true"] {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .nav2 {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Micro-interactions & animations */
+    .card, .post, .tile, .fr {
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .thumb>*, .post .im>*, .fr .im>* {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card:hover .thumb>*, .post:hover .im>*, .fr:hover .im>* {
+      transform: scale(1.05);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--fg);
+      color: var(--bg);
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 32px;
+        gap: 36px;
+      }
+
+      .collage {
+        height: 350px;
+      }
+
+      .vbody {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .post {
+        grid-template-columns: 1fr;
+      }
+
+      .post .im {
+        aspect-ratio: 16/9;
+      }
+
+      .wall {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .wall {
+        grid-template-columns: 1fr;
+      }
+
+      .collage {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<nav class="navbar py-2 px-2" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<a href="index.html" class="navbar-item" style="text-decoration: underline;
-															text-decoration-color: #02d36e;
-															text-decoration-thickness: 3px;">
-
-				<h2 class="is-size-4 has-text-weight-bold ml-2" id="nav-text">
-					pillisiddharth.me
-				</h2>
-			</a>
-
-			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-				data-target="navbarBasicExample" id="burger-menu">
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-			</a>
-		</div>
-
-		<div class="navbar-menu" id="navbar-items">
-			<div class="navbar-end">
-				<div class="navbar-item">
-					<div class="buttons">
-						<a href="#latest"><button class="button is-white">Latest</button></a>
-					</div>
-				</div>
-
-				<div class="navbar-item">
-					<div class="buttons">
-						<a href="#projects"><button class="button is-white">Projects</button></a>
-					</div>
-				</div>
-
-				<div class="navbar-item">
-					<div class="buttons">
-						<a href="#skills"><button class="button is-white">Skills</button></a>
-					</div>
-				</div>
-
-				<div class="navbar-item">
-					<div class="buttons">
-						<a href="#awards"><button class="button is-white">Awards</button></a>
-					</div>
-				</div>
-
-				<!-- <div class="navbar-item">
-					<div class="buttons">
-						<a href="/ANN"><button class="button is-white">ANNA CLICK HERE!</button></a>
-					</div>
-				</div> -->
-
-				<div class="navbar-item">
-					<div class="buttons">
-						<a href="#contact"><button class="button" style="border-width: 2px"
-								id="log-in">Contact</button></a>
-					</div>
-				</div>
-
-				<div class="navbar-item">
-					<a href="https://twitter.com/PilliSiddharth" target="_blank"><button class="button is-link"><strong
-								style="font-weight: 600">Twitter</strong></button></a>
-				</div>
-			</div>
-		</div>
-		</div>
-	</nav>
-
-	<hr class="my-0">
-
-	<section class="hero is-medium">
-		<div class="hero-body" id="hero-intro-body">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-					<div class="column is-5 mr-6 is-12-mobile">
-						<h1 class="title has-text-weight-bold is-size-2-widescreen mb-4" id="color-light-black"
-							style="line-height: 125%">
-							Hi! I'm <br class="is-hidden-mobile" />Siddharth Pilli.
-						</h1>
-						<p class="is-size-5-widescreen mb-5" style="
-									letter-spacing: -3%;
-									font-weight: 400;
-									font-size: 1.2rem !important;">
-							Siddharth Pilli is a 17-year-old Indian, <strong class="has-text-weight-semibold">Asia's Youngest Data Scientist</strong> currently working with IIT Hyderabad as an Machine Learning Engineer.
-						</p>
-
-						<a href="#latest">
-							<button class="button is-dark" style="font-size: 1.1rem !important">
-								<span>Learn more</span>
-							</button>
-						</a>
-
-						<a href="#contact">
-							<button class="button is-dark is-outlined" style="font-size: 1.1rem !important">
-								<span>Contact me</span>
-							</button>
-						</a>
-
-						<div class="soc mt-5">
-							<a href="https://twitter.com/PilliSiddharth" target="_blank" style="color: #363636"><i
-									class="fab fa-twitter fa-2x mx-3" aria-hidden="true"></i></a>
-							<a href="https://www.youtube.com/channel/UCH4gQqET_tbqjTaJB3rzZ9g" target="_blank" style="color: #363636"><i
-									class="fab fa-youtube fa-2x mx-3" aria-hidden="true"></i></a>
-							<a href="https://www.instagram.com/pillisiddharth4/" target="_blank" style="color: #363636"><i
-									class="fab fa-instagram fa-2x mx-3" aria-hidden="true"></i></a>
-							<a href="https://www.linkedin.com/in/siddharth-pilli-583190268/" target="_blank" style="color: #363636"><i
-									class="fab fa-linkedin fa-2x mx-3" aria-hidden="true"></i></a>
-							<a href="https://github.com/PilliSiddharth" target="_blank" style="color: #363636"><i
-									class="fab fa-github fa-2x mx-3" aria-hidden="true"></i></a>
-						</div>
-
-					</div>
-					<div class="column my-2 is-5 has-text-centered">
-						<img src="assets/uploads/mmm.jpg"
-							style="max-height: 430px;  border: 7px solid black; border-radius: 15px;" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- <section class="hero is-small" id="latest" style="background-color: #242424 !important;">
-		<div class="hero-body">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-
-					<div class="column has-text-centered is-5 my-2">
-						<figure class="image">
-							<blockquote class="twitter-tweet" style="color: white;">
-								<p lang="en" dir="ltr">I truly admire Siddharth Pilli’s sensitivity. Seeing his
-									grandmother suffer from Alzheimer’s, he decided to work on a &#39;Smart Wristband’
-									that would help monitor aspects that relate to this disease. Congratulations on
-									being conferred the Rashtriya Bal Puraskar 2021! <a
-										href="https://t.co/ddBK5l6k8y">pic.twitter.com/ddBK5l6k8y</a></p>&mdash;
-								Narendra Modi (@narendramodi) <a
-									href="https://twitter.com/narendramodi/status/1353690264343220224?ref_src=twsrc%5Etfw">January
-									25, 2021</a>
-							</blockquote>
-							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-						</figure>
-					</div>
-
-					<div class="column is-5" id="example-body">
-						<p class="help is-size-5" style="color: white;">Awards</p>
-						<h1 class="title is-size-2" id="example-title" style="color: white !important;">
-							Pradhan Mantri Rashtriya Bal Puraskar 2021</h1>
-						<p class="is-size-5 mb-5" style="color: white !important; font-size: 1.10rem!important;">
-							I was very honoured to receive the Pradhan Mantri Rashtriya Bal Shakti Puraskar for the year
-							2021 in the category of Innovation.</p>
-						<a href="/achievements/index.html" target="_blank"><button class="button is-success"
-								style="font-size: 1.1rem !important">
-								<span>Look at the awards page</span>
-							</button></a>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<!-- <section class="section is-small">
-		<div class="container">
-			<div class="columns is-vcentered is-centered">
-				<div class="column is-10 is-multiline">
-
-					<h1 class="title is-size-3 has-text-weight-semibold mb-5" id="color-light-black">
-						Current Startup</h1>
-
-					<a href="https://creatowise.com/" target="_blank">
-						<div class="notification is-light is-info has-text-centered mb-4">
-							<div class="columns">
-
-								<div class="column is-6">
-									<img class="image is-16by9 pt-3" src="/hero.png">
-								</div>
-
-								<div class="column is-6 is-vcentered">
-									<h1 class="title has-text-weight-bold has-text-left my-2 is-size-4-mobile"
-										id="color-light-black">CreatoWise</h1>
-									<p class="has-text-left" id="color-light-black">
-										<span class="tag is-info">SaaS</span>
-										<span class="tag is-danger">Creators</span>
-										<br><br>
-										<b>CreatoWise</b> helps YouTubers go viral with the power of AI. <br><br>
-
-										Generate Viral Video Ideas, Preview Thumbnails and Titles, and make better video
-										titles powered by AI.
-										<br><br>
-
-										<button class="button is-link is-fullwidth">
-											<span class="icon">
-												<i class="fas fa-external-link-square-alt"></i>
-											</span>
-											<span>Look at CreatoWise</span>
-										</button>
-									</p>
-								</div>
-
-							</div>
-						</div>
-					</a>
-
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<section class="section" id="projects">
-		<div class="container">
-			<h1 class="title has-text-centered mb-5">My Projects</h1>
-
-			<div class="columns is-multiline is-justify-content-center">
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/sayam.jpg" alt="Register">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">sahAIam - A.I Personal Assistant</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">sahAIam, a phone-based AI assistant, supports 100+ languages, automates tasks, and aids non-tech users. Created by Siddharth, it earned Top 10 in Samsung's Solve for Tomorrow and praise from OlaCabs CEO Bhavish Aggarwal. 
-
-									</span><br>
-
-								<a href="https://x.com/PilliSiddharth/status/1837830446282891368"
-									target="_blank"><button class="button is-small mt-2 is-dark">Check it
-										out</button></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/medcodr-of.jpg" alt="Register">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Universis - A.I Medical Coder</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">A simple AI-powered platform that accurately converts medical documents into universal medical codes like ICD-10-CM and CPT. 
-
-									</span><br>
-
-								<a href="https://universis.tech"
-									target="_blank"><button class="button is-small mt-2 is-dark">Check it
-										out</button></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/gloves.jpg" alt="Register">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Hastavaani - Sign Language Translator</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">An A.I powered gloves built on top of various sensors which can detect gesture(sign language) and convert it to speech. 
-
-									</span><br>
-
-								<a href="https://www.linkedin.com/feed/update/urn:li:activity:7210624127232090112/"
-									target="_blank"><button class="button is-small mt-2 is-dark">Check it
-										out</button></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<div class="columns is-multiline is-justify-content-center">
-
-				
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="https://cdn-images.toolify.ai/168589181084319125.jpg?x-oss-process=image/resize,l_1000,m_lfit" alt="Register">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Universis - College Counsellor</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">Universis is an AI-driven college counselor that utilizes machine learning algorithms to provide personalized guidance to students.</span><br>
-
-								<a href="https://universis.app"
-									target="_blank"><button class="button is-small mt-2 is-dark">Check it
-										out</button></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/Capture.JPG" alt="Select Expert">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">notely - A.I Student Mentor for Academics
-									</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">Introducing notely, the revolutionary app powered by artificial intelligence that takes your studies and preparation to the next level.
-									</span><br>
-
-								<a href="https://notely.in" target="_blank"><button
-										class="button is-small mt-2 is-dark">Check it out</button></a>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="https://blogs.iiit.ac.in/wp-content/uploads/2019/11/EDRI-1.png" alt="Select Expert">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">EDRI (Earthquake Disaster Risk Index)</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">The Earthquake Disaster Risk Index (EDRI) is a composite index that compares the relative overall earthquake disaster risk of cities worldwide. It describes how various factors contribute to the overall risk.</span><br>
-
-								<a href="https://blogs.iiit.ac.in/edri/" target="_blank"><button
-										class="button is-small mt-2 is-dark">Check it out</button></a>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="columns is-multiline is-justify-content-center my-4">
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/stock.jpg" alt="Consult Expert">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Stocks & Finance Bots</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">Freelanced various stocks, crypto, futures and etc trading bots for RightChoice USA</span>
-								<br>
-
-								<a target="_blank"
-									href="https://www.youtube.com/@InvestmentsinUSA/about"><button
-										class="button is-small mt-2 is-dark">Check it out</button></a>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/leaf.jpg" alt="Select Expert">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Leaf Counting - Jülich Challenges Platform
-									</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">Build the best model (least MAE) that counts the number of leaves in a plant.
-									</span><br>
-
-								<a href="https://helmholtz-data-challenges.de/web/challenges/challenge-page/85/leaderboard/150" target="_blank"><button
-										class="button is-small mt-2 is-dark">Check it out</button></a>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-3">
-					<div class="card">
-						<div class="card-image">
-							<figure class="image is-16by9">
-								<img src="assets/uploads/wheat.jpg" alt="Select Expert">
-							</figure>
-						</div>
-						<div class="card-content">
-							<div class="media">
-								<div class="media-content">
-									<p class="title is-4 is-size-5">Global Wheat Challenge</p>
-								</div>
-							</div>
-
-							<div class="content">
-								<span id="normal-font">Created a YOLOv5 model for detecting the wheat heads in a field.</span><br>
-
-								
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-
-		</div>
-
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<section class="section my-5" id="skills">
-		<div class="container">
-			<h1 class="title has-text-centered mb-5" id="color-light-black">What I like to do</h1>
-			<div class="columns is-multiline is-justify-content-center">
-
-				<div class="column is-4">
-					<div class="card" id="features-card" style="border: 0.5px solid #e9e9e9;">
-						<header class="card-content pb-0">
-							<i class="fab fa-js-square"></i>
-							<p class="content has-text-weight-bold is-size-4" id="color-light-black">Web Applications</p>
-						</header>
-
-						<div class="card-content pt-4">
-							<div class="content" id="color-light-black">
-								<span id="normal-font">I love to make web apps and sites with Flask, Django, JS, Python, HTML & CSS. </span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-4">
-					<div class="card" id="features-card" style="border: 0.5px solid #e9e9e9;">
-						<header class="card-content pb-0">
-							<i class="fas fa-robot"></i>
-							<p class="content has-text-weight-bold is-size-4" id="color-light-black">Mobile App Development
-							</p>
-						</header>
-
-						<div class="card-content pt-4">
-							<div class="content" id="color-light-black">
-								<span id="normal-font">I have created many projects for the IOS & Android using tools such as Flutter, Java, and Kivy. </span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="column is-4">
-					<div class="card" id="features-card" style="border: 0.5px solid #e9e9e9;">
-						<header class="card-content pb-0">
-							<i class="fas fa-chart-area"></i>
-							<p class="content has-text-weight-bold is-size-4" id="color-light-black">AI & ML
-							</p>
-						</header>
-
-						<div class="card-content pt-4">
-							<div class="content" id="color-light-black">
-								<span id="normal-font">I'm skilled in working with AI, ML, Deep Learning, and Computer Vision. </span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<section class="hero is-small py-4 mb-5" id="awards">
-		<div class="hero-body">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-
-					<div class="column has-text-centered is-5">
-						<figure class="image">
-							<img src="assets/uploads/sakshi.jpg" style="border-radius: 15px;" alt="">
-						</figure>
-					</div>
-
-					<div class="column is-1"></div>
-
-					<div class="column is-5 is-12-mobile" id="mismanagement-body">
-						<h1 class="title is-size-2 is-size-3-mobile has-text-weight-bold mb-4  reduce-size"
-							id="color-light-black">
-							Achievements, Awards & Prizes
-						</h1>
-						<p class="is-size-5" style="font-size: 1.2rem !important;" id="color-light-black">
-							I won a few Awards and was featured in a couple of Newspapers.
-						</p>
-
-						<a href="achievements/index.html" target="_blank"><button class="button is-dark mt-4">Look
-								at the awards page</button></a>
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<section class="hero is-primary is-small" id="color-light-blue">
-		<div class="hero-body" id="contact">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-					<div class="column has-text-centered my-3 is-6">
-						<figure class="image is-16by9">
-							<img src="/assets/uploads/s.jpg" alt="">
-						</figure>
-
-					</div>
-					<div class="column is-6 is-12-mobile" id="margin-adding">
-						<h1 class="title has-text-weight-bold is-size-3-widescreen is-size-4-mobile mb-4 mt-4"
-							style="font-weight: 600;" id="color-light-black">
-							Contact me
-						</h1>
-						<p class="is-size-6-widescreen mb-5">
-							Contact Me for further Queries, Oppurtunities & Collabs and I will try to reach out as soon
-							as possible.
-
-							<br><br>
-
-							You can also reach out to me on <a href="https://twitter.com/hemeshch"
-								style="color: blue;">Twitter</a> and <a style="color: blue;"
-								href="mailto:pillisiddharth@gmail.com">
-								pillisiddharth@gmail.com</a><br class="visible-or-not"><br>
-						</p>
-						<!-- <script src="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script>
-						<script type="text/javascript">
-							var JFL_202033015482441 = new JotformFeedback({
-								formId: '202033015482441',
-								base: 'https://form.jotform.com/',
-								windowTitle: 'Contact Hemesh',
-								background: '#004aff',
-								fontColor: '#FFFFFF',
-								type: '0',
-								height: 500,
-								width: 700,
-								openOnLoad: false
-							}); -->
-						</script>
-						<a  href="https://tally.so/r/wkNJpo" class="button is-link is-fullwidth pricingTable-signup btn lightbox-202033015482441"
-							style="margin-top: 20px; color: white;"> Contact Me&excl;</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<section class="hero is-small my-5" id="certificates">
-		<div class="hero-body">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-
-					<div class="column is-5 is-12-mobile">
-
-						<!-- <div class="card" style="border: solid black 4px;">
-							<header class="card-header">
-								<p class="card-header-title is-size-4">
-									Certificates and Courses
-								</p>
-							</header>
-							<div class="card-content">
-								<div class="content is-size-5">
-									Look at my Certificates I got and my assignments and experience of my
-									Zero2Maker Course.
-								</div>
-							</div>
-							<footer class="card-footer">
-								<a href="/awards/index.html" target="_blank" class="card-footer-item">My
-									Certificates</a>
-								<a href="/z2m/index.html" target="_blank" class="card-footer-item">Z2M Course</a>
-							</footer>
-						</div> -->
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<!-- <section class="section is-small">
-		<div class="container">
-			<div class="columns is-vcentered is-centered">
-				<div class="column is-6 is-multiline">
-
-					<h1 class="title is-size-3 has-text-weight-semibold mb-4" id="color-light-black">
-						Cartoon Network Interview
-					</h1>
-
-					<figure class="image is-16by9">
-						<iframe class="has-ratio" src="https://www.youtube.com/embed/mcTaEVZi2yg" frameborder="0"
-							allowfullscreen></iframe>
-					</figure>
-
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-	<section class="hero is-small section">
-		<div class="hero-body">
-			<div class="container">
-				<div class="columns is-vcentered is-justify-content-center">
-
-					<div class="column has-text-centered is-5">
-						<figure class="image" id="image-shadow" style="max-width: 540px;">
-							<img src="assets/uploads/1.jpg" alt="">
-						</figure>
-						<h3 class="is-size-6 mt-5" style="color: #0A2540;">Hemesh presenting at Parade Grounds,
-							Hyderabad. </h3>
-					</div>
-
-					<div class="column has-text-centered is-5">
-						<figure class="image" id="image-shadow" style="max-width: 540px;">
-							<img src="assets/uploads/2.jpeg" alt="">
-						</figure>
-						<h3 class="is-size-6 mt-5" style="color: #0A2540;">Hemesh presenting to Mr Ravi Shankar Prasad,
-							Minister of Electronics and Information Technology
-						</h3>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-	<div class="container">
-		<hr style="background-color:  #f2f2f2; margin: 0 !important">
-	</div>
-
-
-
-	
-	
-	<style>
-		#hover-bar {
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			background-color: #333;
-			color: white;
-			padding: 10px;
-			text-align: center;
-		}
-	
-		#template-link {
-			color: white;
-			text-decoration: none;
-		}
-	
-		#template-link:hover {
-			text-decoration: underline;
-		}
-	</style>
-
-	<footer class="footer">
-		<div class="container">
-			<div class="content has-text-centered">
-				<div class="soc mb-4">
-					<a href="https://github.com/PilliSiddharth" target="_blank"><i class="fab fa-github fa-lg mx-3"
-							aria-hidden="true"></i></a>
-					<a href="https://www.youtube.com/channel/UCH4gQqET_tbqjTaJB3rzZ9g" target="_blank"><i
-							class="fab fa-youtube fa-lg mx-3" aria-hidden="true"></i></a>
-					<a href="https://twitter.com/PilliSiddharth" target="_blank"><i class="fab fa-twitter fa-lg mx-3"
-							aria-hidden="true"></i></a>
-				</div>
-			
-			</div>
-		</div>
-	</footer>
-
-	<div id="hover-bar">
-		<a href="https://hemesh.tech/" id="template-link">Template by Hemesh Chadalavada</a>
-	</div>
-	<script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-	<!-- <script defer type="text/javascript" src="assets/index.js" charset="utf-8"></script> -->
+  <!-- Header Navigation -->
+  <header>
+    <div class="wrap">
+      <a href="#top" class="brand">
+        <b>pillisiddharth.github.io</b>
+      </a>
+      <nav>
+        <a href="#latest">Latest</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode" title="Toggle theme">
+          <i class="fa-regular fa-moon" id="theme-icon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section>
+      <div class="wrap hero">
+        <div>
+          <h1>hi! i'm siddharth pilli.</h1>
+          <p class="lead">
+            <b>Asia's youngest data scientist.</b> <span class="lead-muted">19-year-old studying Data Science &amp; AI at Dublin City University. Building multilingual speech AI, assistive tech, and ML models. Previously at smallest.ai, IIT Hyderabad (AI CoE), and IIIT Hyderabad (INAI Labs).</span>
+          </p>
+
+          <div class="pill-group">
+            <a class="pill solid" href="#latest">explore work</a>
+            <a class="pill" href="#projects">projects (9)</a>
+            <a class="pill" href="assets/uploads/resume.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> see my cv</a>
+            <button class="pill" id="copy-email-btn" type="button"><i class="fa-regular fa-copy"></i> copy email</button>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://twitter.com/PilliSiddharth" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+            <a href="https://github.com/PilliSiddharth" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/siddharth-pilli-583190268/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:pillisiddharth@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a>
+            <a href="https://tally.so/r/wkNJpo" target="_blank" rel="noopener"><i class="fa-regular fa-paper-plane"></i> Tally Form</a>
+          </div>
+        </div>
+
+        <!-- Interactive Floating Collage with Real Photos -->
+        <div class="collage" id="collage" aria-label="Photo collage of Siddharth Pilli"></div>
+      </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section id="latest">
+      <div class="wrap">
+        <h2>latest</h2>
+        <p class="sub">what i've been building, publishing, and working on.</p>
+        <div class="tl" id="tl"></div>
+      </div>
+    </section>
+
+    <!-- Selected Projects Section -->
+    <section id="projects">
+      <div class="wrap">
+        <h2>projects</h2>
+        <p class="sub">tap any project to inspect details, architecture, and live demos.</p>
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
+
+    <!-- Work & Research Experience Section -->
+    <section id="experience">
+      <div class="wrap">
+        <h2>experience</h2>
+        <p class="sub">industrial research, ML engineering, and data science roles.</p>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Data Scientist — <a href="https://smallest.ai" target="_blank" rel="noopener">smallest.ai ↗</a></span>
+              <span class="exp-period">Aug 2025 – Jan 2026</span>
+            </div>
+            <div class="exp-location">Bangalore, India • Speech AI &amp; LLM Voice</div>
+            <ul class="exp-bullets">
+              <li>Architected and trained a production multilingual text normalization model using encoder architectures and custom NER classification, achieving <strong>sub-10ms inference latency</strong> across 16 Indic and international languages.</li>
+              <li>Core contributor to <strong>Lightning v2</strong>, an ultra-low-latency multilingual Text-to-Speech (TTS) engine covering 21 Indian and European languages.</li>
+              <li>Designed and scaled petabyte-scale audio preprocessing, phonemization, and data quality filtering pipelines.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Machine Learning Engineer — <a href="https://aiswaryam.ai.iith.ac.in/" target="_blank" rel="noopener">IIT Hyderabad (AI CoE Labs) ↗</a></span>
+              <span class="exp-period">May 2023 – July 2025</span>
+            </div>
+            <div class="exp-location">Hyderabad, India • Urban Infrastructure AI</div>
+            <ul class="exp-bullets">
+              <li>Engineered AI frameworks for urban road infrastructure monitoring, anomaly detection, and predictive maintenance under the <strong>AiSwARYAM</strong> national initiative.</li>
+              <li>Trained real-time computer vision models to identify potholes, cracking, and pavement distress from mobile phone telemetry.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Research Engineer — <a href="https://blogs.iiit.ac.in/edri/" target="_blank" rel="noopener">INAI Labs (IIIT Hyderabad) ↗</a></span>
+              <span class="exp-period">Feb 2022 – Jan 2023</span>
+            </div>
+            <div class="exp-location">Hyderabad, India • Intel Applied AI Center</div>
+            <ul class="exp-bullets">
+              <li>Collaborated with Prof. Pradeep Kumar Ramancharla on pre- and post-earthquake structural disaster risk assessment (EDRI).</li>
+              <li>Trained deep vision models classifying masonry vs. reinforced concrete structures to enable rapid seismic risk evaluations for municipal planners.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Data Scientist — <a href="https://infinitylearn.com/" target="_blank" rel="noopener">Infinity Learn ↗</a></span>
+              <span class="exp-period">Aug 2021 – Jan 2022</span>
+            </div>
+            <div class="exp-location">Hyderabad, India • EdTech AI</div>
+            <ul class="exp-bullets">
+              <li>Developed predictive student performance tracking algorithms for competitive examinations (JEE and NEET).</li>
+              <li>Automated personalized diagnostic report generation to pinpoint student learning bottlenecks.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Computer Vision Intern — IIT Hyderabad</span>
+              <span class="exp-period">May 2021 – Aug 2021</span>
+            </div>
+            <div class="exp-location">Hyderabad, India • Dr. Vineeth N Balasubramanian's Lab</div>
+            <ul class="exp-bullets">
+              <li>Conducted plant phenotyping deep learning research for the Jülich Leaf Counting challenge, achieving <strong>0.68 MAE</strong> using Xception and ranking <strong>2nd globally on the leaderboard</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Skills Section -->
+    <section id="education">
+      <div class="wrap">
+        <h2>education &amp; skills</h2>
+        <p class="sub">academic background and core technical competencies.</p>
+        <div class="edu-grid">
+          <div class="edu-list">
+            <div class="edu-card">
+              <div class="edu-school">
+                <span>Dublin City University</span>
+                <span class="edu-date">2026 – Present</span>
+              </div>
+              <div class="edu-detail">BSc in Data Science and Artificial Intelligence • Dublin, Ireland</div>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-school">
+                <span>Gatik Junior College</span>
+                <span class="edu-date">Graduated 2025</span>
+              </div>
+              <div class="edu-detail">12th Grade Science Stream • <strong>94% in Board Exams</strong> • Founder of Hack Club; hosted Telangana's first high-school hackathons: Xplorer'23 &amp; Xplorer'24.</div>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-school">
+                <span>Sri Chaitanya Techno Schools</span>
+                <span class="edu-date">Graduated 2023</span>
+              </div>
+              <div class="edu-detail">10th Grade • <strong>90% in Board Exams</strong> • Conferred the WHIZZ Kid Award.</div>
+            </div>
+          </div>
+
+          <div class="skills-block">
+            <div class="skill-cat">
+              <h4>Languages</h4>
+              <div class="skill-tags">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">C/C++</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">HTML/CSS</span>
+                <span class="skill-pill">R</span>
+              </div>
+            </div>
+
+            <div class="skill-cat">
+              <h4>Frameworks &amp; Machine Learning</h4>
+              <div class="skill-tags">
+                <span class="skill-pill">PyTorch</span>
+                <span class="skill-pill">TensorFlow</span>
+                <span class="skill-pill">TF-Lite Micro</span>
+                <span class="skill-pill">FastAPI</span>
+                <span class="skill-pill">Django</span>
+                <span class="skill-pill">Hugging Face</span>
+                <span class="skill-pill">Scikit-learn</span>
+                <span class="skill-pill">Pandas / NumPy</span>
+              </div>
+            </div>
+
+            <div class="skill-cat">
+              <h4>Tools, Cloud &amp; Embedded</h4>
+              <div class="skill-tags">
+                <span class="skill-pill">Docker</span>
+                <span class="skill-pill">Git / GitHub</span>
+                <span class="skill-pill">GCP</span>
+                <span class="skill-pill">AWS</span>
+                <span class="skill-pill">Twilio Voice</span>
+                <span class="skill-pill">Linux</span>
+                <span class="skill-pill">ESP-8266</span>
+                <span class="skill-pill">Arduino</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Press Wall Section -->
+    <section id="awards">
+      <div class="wrap">
+        <h2>awards &amp; press</h2>
+        <p class="sub">national accolades, newspaper features, and competition prizes.</p>
+        <div class="wall" id="wall" style="margin-bottom:32px"></div>
+        <a class="pill" href="achievements/index.html">see all achievements &amp; press coverage &rarr;</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="wrap">
+        <h2>contact</h2>
+        <p class="sub">open to AI discussions, engineering opportunities, and startup collaborations.</p>
+        
+        <div class="contact-box">
+          <div>
+            <h3 style="font-size:24px; margin-bottom:8px">Let's build something together.</h3>
+            <p style="color:var(--mut); margin-bottom:24px; max-width:38ch">
+              Whether you want to discuss low-latency voice models, assistive AI hardware, or early-stage products, feel free to reach out.
+            </p>
+            <div class="pill-group" style="margin-bottom:0">
+              <a class="pill solid" href="mailto:pillisiddharth@gmail.com"><i class="fa-regular fa-envelope"></i> pillisiddharth@gmail.com</a>
+              <a class="pill" href="tel:+353899776782"><i class="fa-solid fa-phone"></i> +353 899776782</a>
+              <a class="pill" href="https://tally.so/r/wkNJpo" target="_blank" rel="noopener"><i class="fa-regular fa-paper-plane"></i> Tally Form</a>
+            </div>
+          </div>
+
+          <div class="contact-links">
+            <div class="contact-item">
+              <i class="fa-brands fa-x-twitter" style="width:20px"></i>
+              <span>Twitter: <a href="https://twitter.com/PilliSiddharth" target="_blank" rel="noopener">@PilliSiddharth</a></span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-github" style="width:20px"></i>
+              <span>GitHub: <a href="https://github.com/PilliSiddharth" target="_blank" rel="noopener">github.com/PilliSiddharth</a></span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-linkedin" style="width:20px"></i>
+              <span>LinkedIn: <a href="https://www.linkedin.com/in/siddharth-pilli-583190268/" target="_blank" rel="noopener">siddharth-pilli</a></span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-youtube" style="width:20px"></i>
+              <span>YouTube: <a href="https://www.youtube.com/channel/UCH4gQqET_tbqjTaJB3rzZ9g" target="_blank" rel="noopener">Siddharth Pilli Channel</a></span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-brands fa-instagram" style="width:20px"></i>
+              <span>Instagram: <a href="https://www.instagram.com/pillisiddharth4/" target="_blank" rel="noopener">@pillisiddharth4</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year">2026</span> Siddharth Pilli • Dublin, Ireland &amp; Hyderabad, India</div>
+      <div><a href="#top" style="color:var(--mut); font-weight:600">back to top &uarr;</a></div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Email copied to clipboard!</div>
+
+  <!-- Interactive Modal Viewer -->
+  <div id="viewer" hidden role="dialog" aria-modal="true" aria-label="Project and Photo Viewer">
+    <div class="viewer-dialog">
+      <div class="vbar">
+        <span id="vno">1 / 9</span>
+        <button class="btn" id="close" type="button" aria-label="Close modal">Close (Esc)</button>
+      </div>
+      <div class="vbody">
+        <div class="big" id="big"></div>
+        <div class="vinfo">
+          <span class="chip" id="vtag"></span>
+          <h2 id="vtitle"></h2>
+          <p id="vdesc"></p>
+          <div class="tog" id="tog"></div>
+          <p id="vlink-wrap" style="margin-top:16px">
+            <a class="pill solid" id="vlink" href="#" target="_blank" rel="noopener">
+              <span>check it out</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </p>
+          <div class="nav2">
+            <button class="btn" id="prev" type="button">&larr; Prev</button>
+            <button class="btn" id="next" type="button">Next &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme switcher (dark / light)
+    var themeBtn = document.getElementById("theme-btn");
+    var themeIcon = document.getElementById("theme-icon");
+    function setTheme(dark) {
+      if (dark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.className = "fa-regular fa-sun";
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        themeIcon.className = "fa-regular fa-moon";
+        localStorage.setItem("theme", "light");
+      }
+    }
+    var savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      setTheme(true);
+    }
+    themeBtn.onclick = function() {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      setTheme(!isDark);
+    };
+
+    // Copy email with toast feedback
+    var copyBtn = document.getElementById("copy-email-btn");
+    var toast = document.getElementById("toast");
+    copyBtn.onclick = function() {
+      navigator.clipboard.writeText("pillisiddharth@gmail.com").then(function() {
+        toast.classList.add("show");
+        setTimeout(function() { toast.classList.remove("show"); }, 2400);
+      });
+    };
+
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Helper to render image or fallback placeholder
+    function pic(s, l, pos) {
+      var styleAttr = pos ? ' style="object-position:' + pos + '"' : '';
+      return s ? '<img src="' + s + '" alt="' + (l || '') + '"' + styleAttr + ' onerror="this.onerror=null;this.parentElement.innerHTML=\'<div class=\\\'ph\\\'>' + (l || '') + '</div>\';">' : '<div class="ph">' + (l || '') + '</div>';
+    }
+
+    // 1. Photo Collage Data
+    var PHOTOS = [
+      {
+        t: "Siddharth Pilli",
+        tag: "Founder & AI Builder",
+        d: "Siddharth Pilli — Recognized as Asia's youngest data scientist at age 12; building voice AI, assistive hardware, and machine learning models.",
+        l: "https://www.linkedin.com/in/siddharth-pilli-583190268/",
+        views: ["Portrait"],
+        img: ["assets/uploads/sid.jpeg"],
+        pos: "center 20%"
+      },
+      {
+        t: "Siddharth w Big B",
+        tag: "KBC",
+        d: "I met Big B at KBC! Craziest side quests in life!",
+        l: "https://twitter.com/PilliSiddharth",
+        views: ["Photo"],
+        img: ["assets/uploads/kbc1.jpg"],
+        pos: "center 15%"
+      },
+      {
+        t: "Keynote & Presentations",
+        tag: "Tech Speaker",
+        d: "Presenting AI inventions and assistive tech models to industry leaders, governors, and hackathon communities across India.",
+        l: "https://x.com/PilliSiddharth/status/1837830446282891368",
+        views: ["Speaking"],
+        img: ["assets/uploads/sidsaying.jpg"],
+        pos: "center 22%"
+      }
+    ];
+
+    var col = document.getElementById("collage");
+    PHOTOS.forEach(function(p, i) {
+      var b = document.createElement("button");
+      b.className = "tile t" + (i + 1);
+      b.type = "button";
+      b.setAttribute("aria-label", p.t);
+      b.innerHTML = pic(p.img[0], p.t, p.pos) + '<div class="tile-overlay">' + p.t + '</div>';
+      b.onclick = function() { openViewer(PHOTOS, i); };
+      col.appendChild(b);
+    });
+
+    // 2. Latest Updates & News
+    var NEWS = [
+      {
+        dt: "2026",
+        t: "Joined DCU for bachelors.",
+        tag: "Higher Education",
+        d: "I’m excited to share that I’ve joined Dublin City University (DCU), Ireland, to pursue my Bachelor’s degree in Data Science and Artificial Intelligence. Looking forward to learning, building, and exploring new opportunities in AI and technology!",
+        l: "https://lnkd.in/p/dBc56wC7",
+        views: ["linkedin"],
+        img: ["assets/uploads/dcuu.png", "assets/uploads/dcuuu.png"]
+      },
+      {
+        dt: "2026",
+        t: "Got invited to KBC Season 18 twice.",
+        tag: "Public Recognition",
+        d: "Invited to Kaun Banega Crorepati (KBC) Season 18 twice, with the opportunity to present Hastavaani, my AI-powered assistive gloves project that converts sign language gestures into speech.",
+        l: "https://www.sonyliv.com/shows/kaun-banega-crorepati-1700000195/season/18",
+        views: ["Recognition"],
+        img: ["assets/uploads/kbc1.jpg"]
+      },
+      {
+        dt: "2026",
+        t: "Won the Stanley's Hackathon",
+        tag: "Hackathon",
+        d: "Won the Stanley Hackathon for developing CareQ, a tool designed to support people living with Alzheimer’s disease.",
+        l: "https://lnkd.in/p/dHFTscFh",
+        views: ["Stanley Hackathon"],
+        img: ["assets/uploads/haa.jpg"]
+      }
+    ];
+
+    var tl = document.getElementById("tl");
+    NEWS.forEach(function(n, i) {
+      var e = document.createElement("div");
+      e.className = "ev";
+      var b = document.createElement("button");
+      b.className = "post";
+      b.type = "button";
+      b.innerHTML = '<div class="im">' + pic(n.img[0], n.t) + '</div>' +
+                    '<div class="tx">' +
+                      '<div class="post-meta">' +
+                        '<span class="post-tag">' + n.tag + '</span>' +
+                        '<span class="dt">' + n.dt + '</span>' +
+                      '</div>' +
+                      '<h3>' + n.t + '</h3>' +
+                      '<p>' + n.d + '</p>' +
+                    '</div>';
+      b.onclick = function() { openViewer(NEWS, i); };
+      e.appendChild(b);
+      tl.appendChild(e);
+    });
+
+    // 3. Projects Grid Data with Multi-Views
+    var PROJ = [
+      {
+        t: "sahAIam",
+        tag: "AI Phone Assistant",
+        d: "AI voice assistant accessible through ordinary telephone calls without smartphones or internet. Supports 100+ languages to handle reminders, utility automations, navigation, and cab bookings for elderly users. Samsung Solve for Tomorrow Top 10.",
+        l: "https://x.com/PilliSiddharth/status/1837830446282891368",
+        views: ["Overview", "Architecture"],
+        img: ["assets/uploads/sayam.jpg", "assets/uploads/bhash.png"]
+      },
+      {
+        t: "universis.tech",
+        tag: "Clinical AI Coding",
+        d: "AI-driven medical coding engine that parses unstructured EHR clinical notes and outputs certified ICD-10-CM and CPT codes, bypassing costly third-party billing agencies. Invited for Y Combinator interview.",
+        l: "https://universis.tech",
+        views: ["Product", "Dashboard"],
+        img: ["assets/uploads/medcodr-of.jpg", "assets/uploads/medcodr.jpg"]
+      },
+      { 
+        t: "Hastavaani",
+        tag: "Sign Language Gloves",
+        d: "Smart assistive gloves embedded with flex sensors, gyro, and ESP-8266 microcontrollers running on-device TF-Lite Micro models to translate sign language gestures into real-time speech across 4 languages.",
+        l: "https://www.linkedin.com/feed/update/urn:li:activity:7210624127232090112/",
+        views: ["Glove Hardware", "Team & Demo"],
+        img: ["assets/uploads/gloves.jpg", "achievements/images/hastnv.jpg"]
+      },
+      {
+        t: "CareQ",
+        tag: "Assistive AI",
+        d: "Won the Stanley Hackathon for developing CareQ, a wearable assistive system for Alzheimer’s patients that helps them recognise people, remember where objects were placed, recall forgotten information, and receive alerts about potentially dangerous situations.",
+        l: "https://lnkd.in/p/dHFTscFh",
+        views: ["CareQ System"],
+        img: ["assets/uploads/careq.png"]
+      }
+    ];
+
+    var cards = document.getElementById("cards");
+    PROJ.forEach(function(p, i) {
+      var b = document.createElement("button");
+      b.className = "card";
+      b.type = "button";
+      b.innerHTML = '<div class="thumb">' + pic(p.img[0], p.t) + '</div>' +
+                    '<div class="cb">' +
+                      '<div class="cb-top">' +
+                        '<span class="chip">' + p.tag + '</span>' +
+                      '</div>' +
+                      '<h3>' + p.t + '</h3>' +
+                      '<p>' + p.d + '</p>' +
+                    '</div>';
+      b.onclick = function() { openViewer(PROJ, i); };
+      cards.appendChild(b);
+    });
+
+    // 4. Awards & Press Wall Data
+    var AW = [
+      {
+        t: "Samsung Solve for Tomorrow",
+        sub: "Top 10 Finalist · 2024",
+        tag: "National Finalist",
+        d: "Top 10 national finalist in Samsung Solve for Tomorrow with sahAIam, an AI phone assistant for senior citizens. Attended incubation bootcamps at Samsung R&D centers.",
+        l: "https://news.samsung.com/in/samsung-solve-for-tomorrow-announces-the-national-shortlist-of-20-semi-finalist-team",
+        views: ["Award", "Samsung Shortlist"],
+        img: ["achievements/images/samsung.jpg", "assets/uploads/SFT_20_Shortlisted_Participants_Web_Banners_page-0001.jpg"]
+      },
+      {
+        t: "Sakshi Excellence Award",
+        sub: "Young Achiever · 2022",
+        tag: "State Honor",
+        d: "Conferred the Young Excellence Award by Honorable AP Governor Biswabhusan Harichandan and YS Bharati garu for groundbreaking data science accomplishments.",
+        l: "achievements/index.html",
+        views: ["Felicitation"],
+        img: ["achievements/images/sakshi.jpg"]
+      },
+      {
+        t: "Byju's Young Genius Award",
+        sub: "News18 Broadcast · 2022",
+        tag: "National Media",
+        d: "Honored on national television during the Byju's Young Genius broadcast in collaboration with Network18 for excelling as Asia's youngest data scientist.",
+        l: "https://youtu.be/JG4Ok-Ogqlk",
+        views: ["Broadcast"],
+        img: ["achievements/images/byjus.jpg"]
+      },
+      {
+        t: "Kaun Banega Crorepati",
+        sub: "Season 18 · Invited Twice · 2026",
+        tag: "Public Recognition",
+        d: "Invited to Kaun Banega Crorepati (KBC) Season 18 twice, with the opportunity to present Hastavaani, my AI-powered assistive gloves project that converts sign language gestures into speech — and met Big B!",
+        l: "https://x.com/PilliSiddharth/status/1837830446282891368",
+        views: ["With Big B"],
+        img: ["assets/uploads/kbc1.jpg"],
+        pos: "center 15%"
+      },
+      {
+        t: "Xplorer'23 & '24 Hackathons",
+        sub: "Founder & Lead Organizer · 2023–2024",
+        tag: "Community",
+        d: "Founder of Hack Club at Gatik Junior College. Hosted Telangana's premier high school student hackathon with 150+ participants building tech for SDGs.",
+        l: "https://www.linkedin.com/posts/siddharthpilli_24-hoursno-sleepmaybe-for-few-hours-activity-7262490595804233728-t21k",
+        views: ["Hackathon Stage"],
+        img: ["achievements/images/xplorer2.jpg"]
+      },
+      {
+        t: "National Press Features",
+        sub: "NDTV, Deccan Chron, ANI · 2019–2026",
+        tag: "Press & TV",
+        d: "Featured by NDTV, The Hindu, Deccan Chronicle, Analytics India Magazine, Times of India, and ANI as Asia's youngest data scientist at age 12.",
+        l: "achievements/index.html",
+        views: ["NDTV Feature", "Sakshi News"],
+        img: ["achievements/images/ndtv.jpg", "achievements/images/sakshi_news2.jpg", "achievements/images/gallery.png"]
+      }
+    ];
+
+    var wall = document.getElementById("wall");
+    AW.forEach(function(a, i) {
+      var b = document.createElement("button");
+      b.className = "fr";
+      b.type = "button";
+      b.innerHTML = '<div class="im">' + pic(a.img[0], a.t, a.pos) + '</div>' +
+                    '<div class="plaque">' +
+                      '<b>' + a.t + '</b>' +
+                      '<span>' + a.sub + '</span>' +
+                    '</div>';
+      b.onclick = function() { openViewer(AW, i); };
+      wall.appendChild(b);
+    });
+
+    // 5. Interactive Fullscreen Modal Viewer
+    var V = document.getElementById("viewer");
+    var L = PROJ, cur = 0, view = 0, lastEl = null;
+
+    function renderView() {
+      var p = L[cur];
+      document.getElementById("vno").textContent = (cur + 1) + " / " + L.length;
+      document.getElementById("vtag").textContent = p.tag || "Showcase";
+      document.getElementById("vtitle").textContent = p.t;
+      document.getElementById("vdesc").textContent = p.d;
+      
+      var bigEl = document.getElementById("big");
+      var currentImg = p.img[view] || p.img[0] || "";
+      var currentLabel = (p.views && p.views[view]) ? p.views[view] : p.t;
+      bigEl.innerHTML = pic(currentImg, currentLabel);
+
+      var l = document.getElementById("vlink");
+      var lWrap = document.getElementById("vlink-wrap");
+      if (p.l) {
+        l.href = p.l;
+        lWrap.style.display = "";
+      } else {
+        lWrap.style.display = "none";
+      }
+
+      var tog = document.getElementById("tog");
+      tog.innerHTML = "";
+      if (p.views && p.views.length > 1) {
+        p.views.forEach(function(vName, k) {
+          var b = document.createElement("button");
+          b.className = "btn";
+          b.type = "button";
+          b.textContent = vName;
+          b.setAttribute("aria-pressed", k === view);
+          b.onclick = function() {
+            view = k;
+            renderView();
+          };
+          tog.appendChild(b);
+        });
+      }
+    }
+
+    function openViewer(list, i) {
+      lastEl = document.activeElement;
+      L = list;
+      cur = i;
+      view = 0;
+      V.hidden = false;
+      document.body.style.overflow = "hidden";
+      renderView();
+      document.getElementById("close").focus();
+    }
+
+    function closeViewer() {
+      V.hidden = true;
+      document.body.style.overflow = "";
+      if (lastEl) lastEl.focus();
+    }
+
+    function step(d) {
+      cur = (cur + d + L.length) % L.length;
+      view = 0;
+      renderView();
+    }
+
+    document.getElementById("close").onclick = closeViewer;
+    document.getElementById("prev").onclick = function() { step(-1); };
+    document.getElementById("next").onclick = function() { step(1); };
+
+    // Dismiss when clicking modal backdrop
+    V.onclick = function(e) {
+      if (e.target === V) closeViewer();
+    };
+
+    // Keyboard navigation
+    document.addEventListener("keydown", function(e) {
+      if (V.hidden) return;
+      if (e.key === "Escape") closeViewer();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+  </script>
 </body>
-
 </html>

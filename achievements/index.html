@@ -1,671 +1,1517 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Siddharth Pilli</title>
-	<link rel="shortcut icon" type="image/png" href="img/favicon.png">
-	<meta charset="UTF-8">
-	<meta name="description" content="Siddharth Pilli's Portfolio">
-	<meta name="keywords" content="Siddharth Pilli, Young Developer, Inventor, Programmer, Entrepreneur, Innovator">
-	<meta name="author" content="Siddharth Pilli">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/css/main.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Achievements &amp; Press Coverage — Siddharth Pilli</title>
+  <meta name="title" content="Achievements &amp; Press Coverage — Siddharth Pilli">
+  <meta name="description" content="Complete archive of honors, national awards, hackathon victories, research engineering appointments, guest keynotes, and television features across India.">
+  <meta name="author" content="Siddharth Pilli">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pillisiddharth.github.io/achievements/">
+  <meta property="og:title" content="Achievements &amp; Press Coverage — Siddharth Pilli">
+  <meta property="og:description" content="Complete archive of honors, national awards, hackathon victories, research grants, and televised press coverage.">
+  <meta property="og:image" content="../assets/uploads/sid.jpeg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --t: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      --bg: #ffffff;
+      --fg: #0a0a0a;
+      --mut: #5c5c5c;
+      --line: #e8e8e8;
+      --line-subtle: #f0f0f0;
+      --ph: #f5f5f7;
+      --card-bg: #ffffff;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 24px -10px rgba(0,0,0,0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.08), 0 24px 44px -14px rgba(0,0,0,0.18);
+      --pill-bg: #f4f4f5;
+      --tag-bg: #f4f4f5;
+      --accent: #0a0a0a;
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d0e11;
+      --fg: #f4f4f6;
+      --mut: #9fa2ac;
+      --line: #22252c;
+      --line-subtle: #191b20;
+      --ph: #16181d;
+      --card-bg: #13151a;
+      --card-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 10px 24px -10px rgba(0,0,0,0.5);
+      --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.6), 0 24px 48px -12px rgba(0,0,0,0.7);
+      --pill-bg: #1c1e24;
+      --tag-bg: #1c1e24;
+      --accent: #f4f4f6;
+      color-scheme: dark;
+    }
+
+    html {
+      background: var(--bg);
+      scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+      scroll-behavior: smooth;
+    }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.65 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: background-color var(--t), color var(--t);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Sticky Header */
+    header {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+      transition: background-color var(--t), border-color var(--t);
+    }
+
+    [data-theme="dark"] header {
+      background: rgba(13, 14, 17, 0.88);
+    }
+
+    header .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 20px;
+      color: var(--mut);
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+
+    nav a {
+      transition: color var(--t);
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    .theme-toggle {
+      all: unset;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mut);
+      border: 1px solid var(--line);
+      transition: color var(--t), border-color var(--t), background-color var(--t);
+    }
+
+    .theme-toggle:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+      background: var(--pill-bg);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0 0 14px;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5.5vw, 56px);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3.8vw, 36px);
+      font-weight: 700;
+    }
+
+    .sub {
+      color: var(--mut);
+      margin: 0 0 28px;
+      font-size: 16px;
+    }
+
+    /* Hero / Intro */
+    .ach-hero {
+      padding-top: 48px;
+      padding-bottom: 36px;
+    }
+
+    .lead {
+      font-size: 18.5px;
+      line-height: 1.6;
+      max-width: 58ch;
+      margin: 0 0 28px;
+      color: var(--fg);
+    }
+
+    .lead-muted {
+      color: var(--mut);
+      font-weight: 400;
+    }
+
+    /* Pill Groups & Filter Tabs */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border: 1px solid var(--fg);
+      background: transparent;
+      color: var(--fg);
+      cursor: pointer;
+      transition: background-color var(--t), color var(--t), transform var(--t);
+    }
+
+    .pill:hover {
+      background: var(--fg);
+      color: var(--bg);
+      transform: translateY(-1px);
+    }
+
+    .pill.solid {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .pill.solid:hover {
+      opacity: 0.88;
+    }
+
+    .pill.active {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      padding: 3px 10px;
+      background: var(--pill-bg);
+      border-radius: 999px;
+      color: var(--mut);
+      border: 1px solid var(--line);
+    }
+
+    /* Wall Grid Section */
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .fr {
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      border-radius: 18px;
+      padding: 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      box-shadow: var(--card-shadow);
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+
+    .fr .im {
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--ph);
+      position: relative;
+    }
+
+    .fr .im img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fr:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: var(--fg);
+    }
+
+    .fr:hover .im img {
+      transform: scale(1.05);
+    }
+
+    .plaque {
+      padding: 12px 6px 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .plaque-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .plaque b {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--fg);
+    }
+
+    .plaque span.sub-text {
+      color: var(--mut);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .plaque p.desc {
+      color: var(--mut);
+      font-size: 13.5px;
+      line-height: 1.5;
+      margin: 4px 0 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Media Directory 2-Column Grid */
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .link-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px 24px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .link-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Compact, Aesthetic Video List with YouTube Thumbnails */
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .video-row {
+      all: unset;
+      box-sizing: border-box;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: var(--pill-bg);
+      border: 1px solid var(--line-subtle);
+      transition: background var(--t), border-color var(--t), transform var(--t);
+    }
+
+    .video-row:hover {
+      background: var(--card-bg);
+      border-color: var(--fg);
+      transform: translateX(3px);
+    }
+
+    .video-row-thumb {
+      width: 86px;
+      height: 52px;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .video-row-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .video-row:hover .video-row-thumb img {
+      transform: scale(1.08);
+    }
+
+    .video-row-play {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      transition: background var(--t);
+    }
+
+    .video-row-play span {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 2px;
+      font-size: 9px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .video-row:hover .video-row-play span {
+      transform: scale(1.15);
+      background: #ff0000;
+    }
+
+    .video-row-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .video-row-info b {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .video-row-info span {
+      font-size: 12px;
+      color: var(--mut);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .video-row-icon {
+      color: var(--mut);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: color var(--t), transform var(--t);
+    }
+
+    .video-row:hover .video-row-icon {
+      color: var(--fg);
+      transform: translate(2px, -2px);
+    }
+
+    /* Article Rows in Left Column */
+    .article-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .article-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--pill-bg);
+      border: 1px solid var(--line-subtle);
+      font-size: 14px;
+      font-weight: 500;
+      transition: background var(--t), border-color var(--t), transform var(--t);
+    }
+
+    .article-row:hover {
+      background: var(--card-bg);
+      border-color: var(--fg);
+      transform: translateX(3px);
+    }
+
+    .article-row-info {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .article-row-info b {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    .article-row-info span {
+      font-size: 12px;
+      color: var(--mut);
+    }
+
+    .article-row i {
+      color: var(--mut);
+      font-size: 11px;
+      flex-shrink: 0;
+      transition: color var(--t);
+    }
+
+    .article-row:hover i {
+      color: var(--fg);
+    }
+
+    /* Interactive Fullscreen Viewer (#viewer) */
+    #viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 100;
+      overflow-y: auto;
+      padding: 32px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewer[hidden] {
+      display: none !important;
+    }
+
+    .viewer-dialog {
+      background: var(--bg);
+      color: var(--fg);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: 0 32px 72px -16px rgba(0,0,0,0.45);
+      max-width: 1080px;
+      width: 100%;
+      overflow: hidden;
+      animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalPop {
+      from { transform: scale(0.96); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .vbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--mut);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .vbody {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 36px;
+      padding: 32px 28px;
+      align-items: start;
+    }
+
+    .big {
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .big img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    .ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 14px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .vinfo h2 {
+      margin: 10px 0 8px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .vinfo .vsub {
+      color: var(--mut);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .vinfo p {
+      color: var(--mut);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+
+    .tog {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 24px;
+    }
+
+    .btn {
+      all: unset;
+      cursor: pointer;
+      border: 1px solid var(--fg);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-weight: 600;
+      font-size: 13.5px;
+      color: var(--fg);
+      transition: background-color var(--t), color var(--t);
+    }
+
+    .btn:hover, .btn[aria-pressed="true"] {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .nav2 {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Clean Video Embed Lightbox Player (#video-modal) */
+    #video-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 120;
+      padding: 24px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #video-modal[hidden] {
+      display: none !important;
+    }
+
+    .video-dialog {
+      background: var(--bg);
+      color: var(--fg);
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+      max-width: 920px;
+      width: 100%;
+      overflow: hidden;
+      animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .video-modal-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--mut);
+      font-weight: 500;
+    }
+
+    .video-modal-bar b {
+      color: var(--fg);
+    }
+
+    .video-modal-player {
+      aspect-ratio: 16/9;
+      background: #000;
+      width: 100%;
+    }
+
+    .video-modal-player iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-modal-footer {
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--card-bg);
+      border-top: 1px solid var(--line);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 36px 0;
+      color: var(--mut);
+      font-size: 14px;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wall {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .links-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .vbody {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wall {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
-<body class="is-preload">
-
-	<!-- Header -->
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="images/meeee.jpg" alt="Siddharth" /></span>
-			<h1 id="logo"><a href="#">Siddharth Pilli</a></h1>
-		</header>
-	</section>
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Main -->
-		<div id="main">
-
-
-			<!-- Two -->
-
-
-
-			<!-- Three -->
-			<section id="four">
-				<div class="container">
-					<h2>Achievements</h2>
-					<p>These are few of my achievements :D</p>
-					<div class="features">
-
-						<article>
-							<a href="https://www.linkedin.com/posts/siddharthpilli_24-hoursno-sleepmaybe-for-few-hours-activity-7262490595804233728-t21k?utm_source=share&utm_medium=member_desktop" class="image"><img
-									src="images/xplorer2.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Hosted Xplorer'24 Hackathon, after the success of Xplorer'23</h4>
-								<p>I'm the founder of Hack Club at Gatik Junior College, and I have hosted Telangana's first High School Student Hackathon which had an audience of 150+ students coming across Telangana and creating projects on solving SDGs (Sustainable Development Goals) using tech.</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/posts/siddharthpilli_me-and-trishanu-roy-recently-got-quite-the-activity-7263888564424224768-y6EU?utm_source=share&utm_medium=member_desktop" class="image"><img
-									src="images/hastnv.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Hastavaani, A.I powered Sign Language Translator</h4>
-								<p>I have worked in developing Hastavaani, an A.I assistive technology gloves which is in great use to assist the deaf and dumb population of India by converting Sign Language gestures which are captured through the gloves to traditional languages like English, Hindi, Marathi, Telugu as speech. Hastavaani has also received funding of a grant of 80,000 rupees from Gatik Junior College to help in the continuity of work in the project.
-
-									
-									</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/posts/hemeshch_excited-to-share-a-cheesy-video-i-made-during-ugcPost-7213973878107176960-3lo-/?utm_source=share&utm_medium=member_desktop" class="image"><img
-									src="images/hackathonpart.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Runner-up in Knowvation's 24 Hour Hackathon in THub, Hyderabad</h4>
-								<p>We've came up as a runner up in Knowvation's 24 Hour Hackathon for AutoFocus, an A.I browser which avoids distractions.
-									
-									</p>
-							</div>
-						</article>	
-
-						<article>
-							<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwq3yJ24dW7WVGVe667BhgsPRdd-TNZkCtDOlgfggcfJOLSm-15dTbKHQ5JRMTUI3PTW6NXj0yBWt2/pubhtml?gid=1688261390&single=true" class="image"><img
-									src="images/hpe.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>HPE Code Wars 2024</h4>
-								<p>I have secured a rank of 41 out of 19,000 participants in HPE Code Wars 2024, a coding problem solving competition hosted by HPE (Hewlett Packard Enterprise).
-
-									
-									</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://news.samsung.com/in/samsung-solve-for-tomorrow-announces-the-national-shortlist-of-20-semi-finalist-team" class="image"><img
-									src="images/samsung.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Samsung Solve for Tomorrow - Top 10</h4>
-								<p>I've came in <strong>Samsung's Solve for Tomorrow - Top 10</strong>
-									
-									in 2024. I've created sahAIam, an A.I personal assistant for the elderly which works on their feature phone. Samsung has taken me on a trip to Bangalore, Delhi, & Noida showing around their research centers and were offering design training programs to better my project for the final pitch. </p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://youtu.be/JG4Ok-Ogqlk" class="image"><img
-									src="images/byjus.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Byjus Young Genius Award</h4>
-								<p>I received the <strong>Byjus Young Genius Award</strong>
-									for the year
-									2022. I got invited to the Byjus Young Genius program hosted in collaboration with News18 TV to show off my data science skills. </p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/posts/siddharthpilli_hey-folks-just-wanted-to-let-you-all-know-activity-7203768946888482818-qgFs?utm_source=share&utm_medium=member_desktop" class="image"><img
-									src="images/iit.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Machine Learning Engineer at IIT Hyderabad, A.I CoE (Center of Excellence)</h4>
-								<p>I'm currently working at <strong>IIT Hyderabad, A.I CoE (Center of Excellence)</strong>
-									
-									as a Machine Learning Engineer. I'm currently working on the project AiSwARYAM.</p>
-									<p> https://aiswaryam.ai.iith.ac.in/ </p>
-							</div>
-						</article>
-
-
-						<article>
-							<a href="https://www.sakshiexcellenceawards.com/index.php?page=Videos&pageid=10&subpageid=44&subsubpageid=0&id=1132" class="image"><img src="images/sakshi.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>Sakshi Excellence Award - Young Excellence 2022</h4>
-								<p>I was recognized by the Sakshi Excellence awards on Education, and I’m very grateful for receiving the award from Honorable A.P governor Biswabhusan Harichandan and YS Bharati garu.</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/posts/siddharthpilli_back-when-i-started-my-position-at-iiit-hyderabad-ugcPost-7106288202952425472-hDT2?utm_source=share&utm_medium=member_desktop" class="image"><img
-									src="images/iiit.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Research Engineer at IIIT Hyderabad, INAI (Intel's Applied A.I Research Center)</h4>
-								<p>I worked at <strong>IIIT Hyderabad, INAI (Intel's Applied A.I Research Center)</strong>, where I worked on building an mobile application for Pre-Earthquake and Post-Earthquake Assessment using EDRI (Earthquake Disaster Risk Index).</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://x.com/InfinityLearn_/status/1448312226511609864" class="image"><img src="images/IL.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>Worked at Infinity Learn as a Data Scientist</h4>
-								<p>I worked at Infinity Learn, an edtech company which mentors students in highly competitive exams like JEE and NEET, as a Data Scientist.  
-								</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/in/sss-student-seminar-series-94a0a325b/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in" class="image"><img src="images/rgukt_session.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>RGKUT Student Seminar - Series</h4>
-								<p>I was invited to speak at RGKUT on the working of Deep Learning & Computer Vision, where I enlightened the students on my skills of A.I, Deep learning, Computer Vision and how they can get started in this exciting field.  
-								</p>
-							</div>
-						</article>
-
-
-						
-
-						<article>
-							<a  class="image"><img
-								src="images/sabitha.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Recognition by the Hon'ble Education Minister Telangana</h4>
-								<p>I was appreciated by the Hon'ble Education Minister of Telangana - Smt. Patlolla Sabitha Indra Reddy
-								 for bagging the job role of a Data Scientist when I was 12 years old.</p>
-							</div>
-						</article>
-
-						<article>
-							<a href="https://www.linkedin.com/feed/update/urn:li:activity:7129341466006487041/" class="image"><img
-									src="images/xplorer.jpeg" alt="" /></a>
-							<div class="inner">
-								<h4>Hosted Telangana's First Ever 24 hours High School Student Hackathon - Xplorer</h4>
-								<p>I'm the founder, event host of Telangana's First Ever 24 hours High School Student Hackathon - Xplorer, where 100+ students have participated from various schools across Telangana and built Software Apps, Websites, and etc to solve problems coming under environment.</p>
-							</div>
-						</article>
-
-
-						<article>
-							<a href="images/VVIT.jpg" class="image"><img
-									src="images/VVIT.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>VVIT - Student Session</h4>
-								<p>I was invited as a guest lecturer to VVIT (Vasireddy Venkatadri Institute of Technology) where I gave a lecture on CNNs (Convolutional Neural Networks) and how students can build it from scratch using Tensorflow and Python.</p>
-							</div>
-						</article>
-						
-						<article>
-							<a href="#" class="image"><img src="images/gallery.png" alt="News Papers" /></a>
-							<div class="inner">
-								<h4>News Papers and Blogs</h4>
-								<p>
-								<ul>
-									<li><a href="https://www.newindianexpress.com/states/andhra-pradesh/2022/sep/25/meet-15-year-old-data-scientist-from-tenali-2501688.html">New Indian Express - Article</a><br>
-									<li><a
-											href="https://www.edexlive.com/beinspired/2019/dec/05/meet-siddharth-pilli-the-12-year-old-from-hyderabad-who-works-as-a-data-scientist-and-loves-coding-9414.html">EdexLive - Article</a><br>
-
-									<li><a
-											href="https://www.sakshi.com/telugu-news/andhra-pradesh/siddharth-srivastav-pilli-data-scientist-life-story-achievements-future">Sakshi News - Article</a><br>
-
-									<li><a href="https://hindi.news18.com/news/education/byjusyounggenius2-siddharth-pilli-is-a-data-scientist-his-exploits-surprise-you-4071481.html">News18 Hindi - Article</a><br>
-
-									<li><a href="https://bookofachievers.com/articles/siddharth-srivastav-pilli">Book of Achievers - Page Article</a><br>
-
-									<li><a
-											href="https://www.kidschaupal.com/young_xpert/siddharth-srivastav-pilli">KidsChaupal - Page Article</a><br>
-
-									<li><a href="https://www.newindianexpress.com/thesundaystandard/2022/sep/25/asias-youngest-data-scientist-going-places-2501546.html">The New Indian Express - Article (Byjus Young Genius)</a><br>
-
-									<li><a href="images/sakshi_paper.jpg">Sakshi Paper - 1 (Telugu)</a><br>
-
-									<li><a href="images/sakshi_news2.jpg">Sakshi Paper - 2 (Telugu)</a><br>
-
-									<li><a href="images/the_hindu.jpg">The Hindu Paper</a><br>
-
-									<li><a href="images/deccan.jpg">Deccan Chronicles Paper</a><br>
-
-							</div>
-						</article>
-
-						<article>
-							<a href="#" class="image"><img src="images/gallery.png" alt="News Papers" /></a>
-							<div class="inner">
-								<h4>Vidoes and Interviews</h4>
-								<p>
-								<ul>
-									<li><a href="https://youtu.be/PD-_LtyN6L8?si=SO_yvwrfHEYKOebC">Sakshi Excellence Award</a><br>
-									<li><a
-											href="https://youtu.be/GwSEaF8qBwc?si=jOgBodCljKQXHvfS">ABN - Channel</a><br>
-
-									<li><a
-											href="https://youtu.be/Q9UkPqni1d0?si=j_Rxi4rX6DR2WYej">NDTV - News Video</a><br>
-
-									<li><a href="https://youtu.be/wpy9GWN0tr8?si=7FcHA_Yim00RRLcw">News18 Channel YouTube</a><br>
-
-									<li><a href="https://youtu.be/2CD_ylGa0k4?si=uQ9M6MYgaX6nCmRX">ANI News Channel YouTube</a><br>
-
-									<li><a
-											href="https://youtu.be/wzFrY-y1Zw0?si=LxOBzCeD8NEFVbr1">ETV Telangana Youtube Channel</a><br>
-
-									<li><a href="https://youtu.be/AFGXMOBLy4g?si=ZYlXwqv3y4wxvX40">CNN News 18 TV Channel Youtube</a><br>
-
-									<li><a href="https://www.youtube.com/watch?v=KmxQmO87M28">ABN Telugu Youtube Channel</a><br>
-
-									<li><a href="https://youtu.be/TivjF1cri6k?si=STVLrDoabPRhWJGs">99TV Youtube Channel</a><br>
-
-									<li><a href="https://youtu.be/JG4Ok-Ogqlk">News 18 TV Byjus Young Genius
-
-										Channel Youtube</a><br>
-										<li><a href="https://youtu.be/G8EJ0zB3eIw?si=aUW_80qqf9g8Nw_V">iDream Media Youtube Channel</a><br>
-
-							</div>
-						</article>
-
-						<!-- <article>
-							<a href="https://ideateforindia.negd.in" class="image"><img src="images/pic04.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>Ideate For India</h4>
-								<p>Presented my Projects in Ideate For India - South Zone. I was in the Top 3 out of the
-									whole state of Telangana. A Bootcamp was conducted in Banglore for Ideate For India.
-									I was awarded an Intel Galileo Gen2 Worth Rs.10,000. June 2019.</p>
-							</div>
-						</article>
-						<article>
-							<a href="https://hyderabad.makerfaire.com/" class="image"><img src="images/make.jpg"
-									alt="" /></a>
-							<div class="inner">
-								<h4>Maker Faire Hyderabad</h4>
-								<p>Presented my Projects in Maker Faire Hyderabad and was appreciated. November 2019.
-								</p>
-							</div>
-						</article>
-						<article>
-							<a href="https://www.facebook.com/thegoodtalkfactory/" class="image"><img
-									src="images/sankalp.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Inaugural Speaker at SANKALP 2019 </h4>
-								<p>Inaugural Speaker at SANKALP 2019 organised by the Good Talk Factory and TSIC. Gave a
-									Presentation on my Project. November 2019.</p>
-							</div>
-						</article>
-						<article>
-							<a href="https://patentinindia.com/provisional-patent-application-advantages/"
-								class="image"><img src="images/pa.jpg" alt="" /></a>
-							<div class="inner">
-								<h4>Provisional Patented </h4>
-								<p>I patented My Innovation 'Smart Wristband To Monitor Elderly &
-									Disabled'.<br>Currently Patent Pending.<br>December 2019.</p>
-							</div>
-						</article> -->
-
-
-
-					</div>
-				</div>
-			</section>
-
-
-
-
-			<!-- Five -->
-			<!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
-
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
-
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
-
-								</div>
-							</section>
-						-->
-
-		</div>
-
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-
-				</ul>
-			</div>
-		</section>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<div id="titleBar"><span class="title"><a href="#">Siddharth Pilli</a></span></div>
-
+<body>
+  <!-- Header Navigation -->
+  <header>
+    <div class="wrap">
+      <a href="../index.html" class="brand">
+        <b>pillisiddharth.github.io</b>
+      </a>
+      <nav>
+        <a href="../index.html">← Back to Portfolio</a>
+        <a href="#wall-section">Awards</a>
+        <a href="#media-directory">Press &amp; TV</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode" title="Toggle theme">
+          <i class="fa-regular fa-moon" id="theme-icon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Intro Section -->
+    <section class="ach-hero">
+      <div class="wrap">
+        <a href="../index.html" class="pill" style="margin-bottom:20px; display:inline-flex; font-size:13px">
+          <i class="fa-solid fa-arrow-left"></i> back to home
+        </a>
+        <h1>all achievements &amp; press.</h1>
+        <p class="lead">
+          <b>A complete archive</b> <span class="lead-muted">of national honors, hackathon championships, research engineering appointments, guest keynotes, and television features across India.</span>
+        </p>
+
+        <!-- Filter Pills -->
+        <div class="pill-group" id="filter-bar">
+          <button class="pill active" data-filter="all" type="button">All (<span id="count-all">0</span>)</button>
+          <button class="pill" data-filter="awards" type="button">Awards &amp; Honors</button>
+          <button class="pill" data-filter="hackathons" type="button">Hackathons &amp; Wins</button>
+          <button class="pill" data-filter="research" type="button">Research &amp; Patents</button>
+          <button class="pill" data-filter="keynotes" type="button">Speaking &amp; Teaching</button>
+          <button class="pill" data-filter="press" type="button">Press &amp; TV</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wall Section -->
+    <section id="wall-section" style="padding-top:20px">
+      <div class="wrap">
+        <div class="wall" id="wall"></div>
+      </div>
+    </section>
+
+    <!-- Dedicated Media Directory -->
+    <section id="media-directory">
+      <div class="wrap">
+        <h2>press coverage &amp; broadcasts</h2>
+        <p class="sub">Televised features, broadcast interviews, and front-page national newspaper publications.</p>
+
+        <div class="links-grid">
+          <!-- Left Column: Newspaper Articles -->
+          <div class="link-card">
+            <div class="card-title-row">
+              <h3><i class="fa-regular fa-newspaper"></i> Newspaper &amp; Web Articles</h3>
+              <span class="chip">Print &amp; Web</span>
+            </div>
+            <p class="sub" style="margin-bottom:16px; font-size:13.5px">National daily news coverage profiling Asia's youngest data scientist.</p>
+            <ul class="article-list" id="articles-list"></ul>
+          </div>
+
+          <!-- Right Column: TV Broadcasts with Sleek Thumbnails & Embed -->
+          <div class="link-card">
+            <div class="card-title-row">
+              <h3><i class="fa-brands fa-youtube" style="color:#ff0000"></i> TV Broadcasts &amp; Interviews</h3>
+              <span class="chip">Video Features</span>
+            </div>
+            <p class="sub" style="margin-bottom:16px; font-size:13.5px">Televised coverage and studio interviews. Click to watch embedded.</p>
+            <div class="video-list" id="video-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year">2026</span> Siddharth Pilli • Dublin, Ireland &amp; Hyderabad, India</div>
+      <div style="display:flex; gap:16px">
+        <a href="../index.html" style="color:var(--fg); font-weight:600">← home</a>
+        <a href="#top" style="color:var(--mut); font-weight:600">back to top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Modal Viewer (Images & Honors) -->
+  <div id="viewer" hidden role="dialog" aria-modal="true" aria-label="Achievement Viewer">
+    <div class="viewer-dialog">
+      <div class="vbar">
+        <span id="vno">1 / 1</span>
+        <button class="btn" id="close" type="button" aria-label="Close modal">Close (Esc)</button>
+      </div>
+      <div class="vbody">
+        <div class="big" id="big"></div>
+        <div class="vinfo">
+          <span class="chip" id="vtag"></span>
+          <h2 id="vtitle"></h2>
+          <span class="vsub" id="vsub"></span>
+          <p id="vdesc"></p>
+          <div class="tog" id="tog"></div>
+          <p id="vlink-wrap" style="margin-top:16px">
+            <a class="pill solid" id="vlink" href="#" target="_blank" rel="noopener">
+              <span>check it out</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </p>
+          <div class="nav2">
+            <button class="btn" id="prev" type="button">&larr; Prev</button>
+            <button class="btn" id="next" type="button">Next &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sleek Video Embed Lightbox Modal -->
+  <div id="video-modal" hidden role="dialog" aria-modal="true" aria-label="Video Player">
+    <div class="video-dialog">
+      <div class="video-modal-bar">
+        <span id="video-modal-title"><b>Video Broadcast</b></span>
+        <button class="btn" id="video-modal-close" type="button" aria-label="Close video player">Close (Esc)</button>
+      </div>
+      <div class="video-modal-player" id="video-modal-player"></div>
+      <div class="video-modal-footer">
+        <div id="video-modal-sub" style="color:var(--mut); font-size:13px; font-weight:500"></div>
+        <a class="pill" id="video-modal-yt" href="#" target="_blank" rel="noopener">
+          <span>Watch on YouTube</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme switcher (dark / light)
+    var themeBtn = document.getElementById("theme-btn");
+    var themeIcon = document.getElementById("theme-icon");
+    function setTheme(dark) {
+      if (dark) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.className = "fa-regular fa-sun";
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        themeIcon.className = "fa-regular fa-moon";
+        localStorage.setItem("theme", "light");
+      }
+    }
+    var savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      setTheme(true);
+    }
+    themeBtn.onclick = function() {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      setTheme(!isDark);
+    };
+
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Helper to render image or fallback placeholder
+    function pic(s, l, pos) {
+      var styleAttr = pos ? ' style="object-position:' + pos + '"' : '';
+      return s ? '<img src="' + s + '" alt="' + (l || '') + '"' + styleAttr + ' onerror="this.onerror=null;this.parentElement.innerHTML=\'<div class=\\\'ph\\\'>' + (l || '') + '</div>\';">' : '<div class="ph">' + (l || '') + '</div>';
+    }
+
+    // 1. Honors & Achievements Database
+    var ITEMS = [
+      {
+        cat: "awards",
+        t: "Samsung Solve for Tomorrow",
+        sub: "Top 10 National Finalist · 2024",
+        tag: "National Finalist",
+        d: "Top 10 national finalist in Samsung Solve for Tomorrow with sahAIam, an AI phone assistant for senior citizens. Attended incubation bootcamps at Samsung R&D centers in Bangalore, Delhi, and Noida, receiving dedicated design thinking and business mentorship for the final pitch.",
+        l: "https://news.samsung.com/in/samsung-solve-for-tomorrow-announces-the-national-shortlist-of-20-semi-finalist-team",
+        views: ["Award Ceremony", "Samsung Shortlist"],
+        img: ["images/samsung.jpg", "../assets/uploads/SFT_20_Shortlisted_Participants_Web_Banners_page-0001.jpg"]
+      },
+      {
+        cat: "awards",
+        t: "Sakshi Excellence Award",
+        sub: "Young Excellence · 2022",
+        tag: "State Honor",
+        d: "Conferred the Young Excellence Award by Honorable AP Governor Biswabhusan Harichandan and YS Bharati garu for groundbreaking data science accomplishments and inspiring youth across Andhra Pradesh and Telangana.",
+        l: "https://www.sakshiexcellenceawards.com/index.php?page=Videos&pageid=10&subpageid=44&subsubpageid=0&id=1132",
+        views: ["Felicitation"],
+        img: ["images/sakshi.jpg"]
+      },
+      {
+        cat: "awards",
+        t: "Byju's Young Genius Award",
+        sub: "News18 National Broadcast · 2022",
+        tag: "National Media",
+        d: "Honored on national television during the Byju's Young Genius broadcast in collaboration with Network18 for excelling as Asia's youngest data scientist at age 12, demonstrating live machine learning demos.",
+        l: "https://youtu.be/JG4Ok-Ogqlk",
+        views: ["Broadcast"],
+        img: ["images/byjus.jpg"]
+      },
+      {
+        cat: "press",
+        t: "Kaun Banega Crorepati",
+        sub: "Season 18 · Invited Twice · 2026",
+        tag: "National TV",
+        d: "Invited to Kaun Banega Crorepati (KBC) Season 18 twice, with the opportunity to present Hastavaani, my AI-powered assistive gloves project that converts sign language gestures into speech — and met Big B!",
+        l: "https://www.sonyliv.com/shows/kaun-banega-crorepati-1700000195/season/18",
+        views: ["With Big B"],
+        img: ["../assets/uploads/kbc1.jpg"],
+        pos: "center 15%"
+      },
+      {
+        cat: "hackathons",
+        t: "Stanley Hackathon Winner",
+        sub: "1st Place · 2026",
+        tag: "1st Place Winner",
+        d: "Won the Stanley Hackathon for developing CareQ, a wearable assistive system for Alzheimer’s patients that helps them recognise people, remember where objects were placed, recall forgotten information, and receive safety alerts.",
+        l: "https://lnkd.in/p/dHFTscFh",
+        views: ["Hackathon Win", "CareQ System"],
+        img: ["../assets/uploads/haa.jpg", "../assets/uploads/careq.png"]
+      },
+      {
+        cat: "hackathons",
+        t: "HPE Code Wars 2024",
+        sub: "Rank 41 / 19,000 · 2024",
+        tag: "Competitive Code",
+        d: "Secured rank 41 out of 19,000 participants across India in HPE Code Wars 2024, an elite algorithmic problem-solving and coding championship hosted by Hewlett Packard Enterprise.",
+        l: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSwq3yJ24dW7WVGVe667BhgsPRdd-TNZkCtDOlgfggcfJOLSm-15dTbKHQ5JRMTUI3PTW6NXj0yBWt2/pubhtml?gid=1688261390&single=true",
+        views: ["Leaderboard Certificate"],
+        img: ["images/hpe.jpg"]
+      },
+      {
+        cat: "hackathons",
+        t: "Knowvation 24h Hackathon — T-Hub",
+        sub: "Runner-Up · T-Hub Hyderabad",
+        tag: "Hackathon Runner-Up",
+        d: "Finished as runner-up in Knowvation's 24 Hour Hackathon hosted at T-Hub, Hyderabad for AutoFocus, an AI-powered smart browser extension designed to eliminate distracting content and promote deep focus.",
+        l: "https://www.linkedin.com/posts/hemeshch_excited-to-share-a-cheesy-video-i-made-during-ugcPost-7213973878107176960-3lo-/",
+        views: ["T-Hub Hackathon Team"],
+        img: ["images/hackathonpart.jpg"]
+      },
+      {
+        cat: "hackathons",
+        t: "Xplorer'23 & '24 Hackathons",
+        sub: "Founder & Lead Organizer · 2023–2024",
+        tag: "Community",
+        d: "Founder of Hack Club at Gatik Junior College. Hosted Telangana's premier high school student hackathon with 150+ participants building technology to address the United Nations Sustainable Development Goals (SDGs).",
+        l: "https://www.linkedin.com/posts/siddharthpilli_24-hoursno-sleepmaybe-for-few-hours-activity-7262490595804233728-t21k",
+        views: ["Xplorer'24 Stage", "Xplorer'23 Event"],
+        img: ["images/xplorer2.jpg", "images/xplorer.jpeg"]
+      },
+      {
+        cat: "research",
+        t: "Hastavaani Sign Language Gloves",
+        sub: "₹80,000 Research Grant Winner · 2024",
+        tag: "Assistive AI Hardware",
+        d: "Engineered Hastavaani, smart assistive gloves embedded with flex sensors, gyro, and ESP-8266 microcontrollers running on-device TF-Lite models to translate sign language gestures into real-time speech across 4 languages. Awarded an ₹80,000 grant from Gatik Junior College.",
+        l: "https://www.linkedin.com/posts/siddharthpilli_me-and-trishanu-roy-recently-got-quite-the-activity-7263888564424224768-y6EU",
+        views: ["Team & Presentation", "Hardware Gloves"],
+        img: ["images/hastnv.jpg", "../assets/uploads/gloves.jpg"]
+      },
+      {
+        cat: "awards",
+        t: "Hon'ble Education Minister Recognition",
+        sub: "Felicitation by Smt. Sabitha Indra Reddy",
+        tag: "State Honor",
+        d: "Personally felicitated by the Hon'ble Education Minister of Telangana, Smt. Patlolla Sabitha Indra Reddy, celebrating my accomplishment of bagging the role of Data Scientist at just 12 years old.",
+        l: "images/sabitha.jpg",
+        views: ["Ministerial Felicitation"],
+        img: ["images/sabitha.jpg"]
+      },
+      {
+        cat: "research",
+        t: "IIT Hyderabad (AI CoE)",
+        sub: "Machine Learning Engineer · 2023–2025",
+        tag: "National Project",
+        d: "Worked at the AI Center of Excellence, IIT Hyderabad on the national project AiSwARYAM. Developed computer vision models and telemetry anomaly detection pipelines for urban road and transport infrastructure planning.",
+        l: "https://aiswaryam.ai.iith.ac.in/",
+        views: ["IIT Hyderabad CoE"],
+        img: ["images/iit.jpg"]
+      },
+      {
+        cat: "research",
+        t: "IIIT Hyderabad (INAI Intel Labs)",
+        sub: "Research Engineer · 2023–2024",
+        tag: "Intel Research Center",
+        d: "Worked at IIIT Hyderabad's INAI (Intel's Applied AI Research Center), developing computer vision algorithms for Pre-Earthquake and Post-Earthquake Structural Vulnerability Assessment using EDRI (Earthquake Disaster Risk Index).",
+        l: "https://www.linkedin.com/posts/siddharthpilli_back-when-i-started-my-position-at-iiit-hyderabad-ugcPost-7106288202952425472-hDT2",
+        views: ["INAI Research Lab"],
+        img: ["images/iiit.jpg"]
+      },
+      {
+        cat: "research",
+        t: "Infinity Learn Data Scientist",
+        sub: "Data Scientist · 2021–2022",
+        tag: "EdTech AI",
+        d: "Joined Infinity Learn as a young Data Scientist, engineering student performance prediction models and learning telemetry analytics for competitive exam preparations across India.",
+        l: "https://x.com/InfinityLearn_/status/1448312226511609864",
+        views: ["Infinity Learn"],
+        img: ["images/IL.jpg"]
+      },
+      {
+        cat: "keynotes",
+        t: "RGUKT Keynote Speaker",
+        sub: "Deep Learning & Computer Vision Seminar",
+        tag: "University Keynote",
+        d: "Invited keynote speaker at RGUKT (Rajiv Gandhi University of Knowledge Technologies) for the Student Seminar Series, delivering a masterclass on Deep Learning, Convolutional Neural Networks, and AI application engineering.",
+        l: "https://www.linkedin.com/in/sss-student-seminar-series-94a0a325b/",
+        views: ["Auditorium Keynote"],
+        img: ["images/rgukt_session.jpg"]
+      },
+      {
+        cat: "keynotes",
+        t: "VVIT Guest Lecturer",
+        sub: "CNNs from Scratch Workshop",
+        tag: "Guest Lecturer",
+        d: "Invited as a guest lecturer to Vasireddy Venkatadri Institute of Technology (VVIT) to conduct an in-depth workshop on Convolutional Neural Networks, training models from scratch using Python and TensorFlow.",
+        l: "images/VVIT.jpg",
+        views: ["VVIT Session"],
+        img: ["images/VVIT.jpg"]
+      }
+    ];
+
+    document.getElementById("count-all").textContent = ITEMS.length;
+
+    var wallEl = document.getElementById("wall");
+    var activeList = ITEMS;
+    var currentFilter = "all";
+
+    function renderWall(list) {
+      wallEl.innerHTML = "";
+      list.forEach(function(item, index) {
+        var btn = document.createElement("button");
+        btn.className = "fr";
+        btn.type = "button";
+        btn.setAttribute("aria-label", item.t);
+        btn.innerHTML = 
+          '<div class="im">' + pic(item.img[0], item.t, item.pos) + '</div>' +
+          '<div class="plaque">' +
+            '<div class="plaque-top">' +
+              '<span class="chip">' + (item.tag || "Honor") + '</span>' +
+            '</div>' +
+            '<b>' + item.t + '</b>' +
+            '<span class="sub-text">' + item.sub + '</span>' +
+            '<p class="desc">' + item.d + '</p>' +
+          '</div>';
+        btn.onclick = function() { openViewer(list, index); };
+        wallEl.appendChild(btn);
+      });
+    }
+
+    renderWall(ITEMS);
+
+    // Filter Buttons logic
+    var filterBtns = document.querySelectorAll("#filter-bar button");
+    filterBtns.forEach(function(b) {
+      b.onclick = function() {
+        filterBtns.forEach(function(btn) { btn.classList.remove("active"); });
+        b.classList.add("active");
+        currentFilter = b.getAttribute("data-filter");
+        
+        if (currentFilter === "press") {
+          document.getElementById("media-directory").scrollIntoView({ behavior: "smooth" });
+          return;
+        }
+
+        if (currentFilter === "all") {
+          activeList = ITEMS;
+        } else {
+          activeList = ITEMS.filter(function(it) { return it.cat === currentFilter; });
+        }
+        renderWall(activeList);
+      };
+    });
+
+    // 2. TV & Broadcasts Database (Sleek Compact Rows with YouTube Thumbnails)
+    var VIDEOS = [
+      {
+        id: "Q9UkPqni1d0",
+        channel: "NDTV",
+        title: "NDTV — Asia's Youngest Data Scientist at 12",
+        sub: "National News Video Feature",
+        url: "https://youtu.be/Q9UkPqni1d0"
+      },
+      {
+        id: "JG4Ok-Ogqlk",
+        channel: "Network18 / Byju's",
+        title: "Byju's Young Genius — Season Broadcast",
+        sub: "Televised Nationwide across Network18",
+        url: "https://youtu.be/JG4Ok-Ogqlk"
+      },
+      {
+        id: "PD-_LtyN6L8",
+        channel: "Sakshi TV",
+        title: "Sakshi Excellence Awards Ceremony",
+        sub: "Young Excellence 2022 Felicitation",
+        url: "https://youtu.be/PD-_LtyN6L8"
+      },
+      {
+        id: "2CD_ylGa0k4",
+        channel: "ANI News",
+        title: "ANI News — 12-Year-Old Prodigy Data Scientist",
+        sub: "National News Agency Wire Feature",
+        url: "https://youtu.be/2CD_ylGa0k4"
+      },
+      {
+        id: "AFGXMOBLy4g",
+        channel: "CNN-News18",
+        title: "CNN-News18 — Television Feature",
+        sub: "Prime-Time Youth Innovator Spotlight",
+        url: "https://youtu.be/AFGXMOBLy4g"
+      },
+      {
+        id: "wzFrY-y1Zw0",
+        channel: "ETV Telangana",
+        title: "ETV Telangana — Exclusive TV Profile",
+        sub: "Regional Television Network Special",
+        url: "https://youtu.be/wzFrY-y1Zw0"
+      },
+      {
+        id: "GwSEaF8qBwc",
+        channel: "ABN Andhra Jyothi",
+        title: "ABN News — Studio Special Feature",
+        sub: "Studio Interview & Tech Discussion",
+        url: "https://youtu.be/GwSEaF8qBwc"
+      },
+      {
+        type: "sonyliv",
+        channel: "SonyLIV / Sony TV",
+        title: "Kaun Banega Crorepati — Season 18 with Big B",
+        sub: "Invited Twice · Presented Hastavaani",
+        url: "https://www.sonyliv.com/shows/kaun-banega-crorepati-1700000195/season/18",
+        img: "../assets/uploads/kbc1.jpg"
+      }
+    ];
+
+    var videoListEl = document.getElementById("video-list");
+
+    function renderVideos() {
+      videoListEl.innerHTML = "";
+      VIDEOS.forEach(function(v) {
+        if (v.type === "sonyliv") {
+          var a = document.createElement("a");
+          a.className = "video-row";
+          a.href = v.url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.innerHTML = 
+            '<div class="video-row-thumb">' +
+              '<img src="' + v.img + '" alt="' + v.title + '" style="object-position:center 15%">' +
+              '<div class="video-row-play"><span><i class="fa-solid fa-play"></i></span></div>' +
+            '</div>' +
+            '<div class="video-row-info">' +
+              '<b>' + v.title + '</b>' +
+              '<span>' + v.sub + '</span>' +
+            '</div>' +
+            '<i class="fa-solid fa-arrow-up-right-from-square video-row-icon"></i>';
+          videoListEl.appendChild(a);
+        } else {
+          var btn = document.createElement("button");
+          btn.className = "video-row";
+          btn.type = "button";
+          var thumbUrl = "https://img.youtube.com/vi/" + v.id + "/mqdefault.jpg";
+          btn.innerHTML = 
+            '<div class="video-row-thumb">' +
+              '<img src="' + thumbUrl + '" alt="' + v.title + '" loading="lazy">' +
+              '<div class="video-row-play"><span><i class="fa-solid fa-play"></i></span></div>' +
+            '</div>' +
+            '<div class="video-row-info">' +
+              '<b>' + v.title + '</b>' +
+              '<span>' + v.sub + '</span>' +
+            '</div>' +
+            '<i class="fa-solid fa-circle-play video-row-icon" style="font-size:14px; color:#ff0000"></i>';
+          btn.onclick = function() {
+            openVideoModal(v.id, v.title, v.sub, v.url);
+          };
+          videoListEl.appendChild(btn);
+        }
+      });
+    }
+
+    renderVideos();
+
+    // Clean Video Embed Lightbox Player
+    var videoModal = document.getElementById("video-modal");
+    var videoModalPlayer = document.getElementById("video-modal-player");
+    var videoModalTitle = document.getElementById("video-modal-title");
+    var videoModalSub = document.getElementById("video-modal-sub");
+    var videoModalYt = document.getElementById("video-modal-yt");
+
+    function openVideoModal(videoId, title, sub, ytUrl) {
+      videoModalTitle.innerHTML = '<b>' + title + '</b>';
+      videoModalSub.textContent = sub;
+      videoModalYt.href = ytUrl;
+
+      videoModalPlayer.innerHTML = 
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" ' +
+          'title="' + title + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+          'allowfullscreen></iframe>';
+
+      videoModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      document.getElementById("video-modal-close").focus();
+    }
+
+    function closeVideoModal() {
+      videoModal.hidden = true;
+      videoModalPlayer.innerHTML = ""; // immediately stop video and audio
+      document.body.style.overflow = "";
+    }
+
+    document.getElementById("video-modal-close").onclick = closeVideoModal;
+    videoModal.onclick = function(e) {
+      if (e.target === videoModal) closeVideoModal();
+    };
+
+    // 3. Articles Database
+    var ARTICLES = [
+      {
+        pub: "The New Indian Express",
+        title: "Meet 15-Year-Old Data Scientist From Tenali",
+        sub: "National Daily Feature Profile",
+        l: "https://www.newindianexpress.com/states/andhra-pradesh/2022/sep/25/meet-15-year-old-data-scientist-from-tenali-2501688.html"
+      },
+      {
+        pub: "EdexLive (New Indian Express)",
+        title: "12-Year-Old Who Works As A Data Scientist",
+        sub: "Education Daily Investigative Profile",
+        l: "https://www.edexlive.com/beinspired/2019/dec/05/meet-siddharth-pilli-the-12-year-old-from-hyderabad-who-works-as-a-data-scientist-and-loves-coding-9414.html"
+      },
+      {
+        pub: "Sakshi News",
+        title: "Siddharth Srivastav Pilli — Life Story & Achievements",
+        sub: "Full-Page State Editorial Coverage",
+        l: "https://www.sakshi.com/telugu-news/andhra-pradesh/siddharth-srivastav-pilli-data-scientist-life-story-achievements-future"
+      },
+      {
+        pub: "News18 Hindi",
+        title: "Young Genius: 12 Saal Ki Umra Mein Data Scientist",
+        sub: "Hindi National News Network Feature",
+        l: "https://hindi.news18.com/news/education/byjusyounggenius2-siddharth-pilli-is-a-data-scientist-his-exploits-surprise-you-4071481.html"
+      },
+      {
+        pub: "The Sunday Standard",
+        title: "Asia's Youngest Data Scientist Going Places",
+        sub: "Sunday National Magazine Special",
+        l: "https://www.newindianexpress.com/thesundaystandard/2022/sep/25/asias-youngest-data-scientist-going-places-2501546.html"
+      },
+      {
+        pub: "Book of Achievers",
+        title: "Siddharth Srivastav Pilli: Machine Learning Whiz",
+        sub: "Hall of Fame Child Prodigy Profile",
+        l: "https://bookofachievers.com/articles/siddharth-srivastav-pilli"
+      },
+      {
+        pub: "KidsChaupal",
+        title: "Young Xpert: Siddharth Pilli on Artificial Intelligence",
+        sub: "Youth Leadership Tech Spotlight",
+        l: "https://www.kidschaupal.com/young_xpert/siddharth-srivastav-pilli"
+      },
+      {
+        pub: "The Hindu & Deccan Chronicle",
+        title: "National Print Newspaper Gallery & Clippings",
+        sub: "Front-page newspaper scans archive",
+        l: "images/gallery.png"
+      }
+    ];
+
+    var articlesListEl = document.getElementById("articles-list");
+
+    function renderArticles() {
+      articlesListEl.innerHTML = "";
+      ARTICLES.forEach(function(art) {
+        var li = document.createElement("li");
+        li.innerHTML = 
+          '<a class="article-row" href="' + art.l + '" target="_blank" rel="noopener">' +
+            '<div class="article-row-info">' +
+              '<b>' + art.title + '</b>' +
+              '<span>' + art.pub + ' · ' + art.sub + '</span>' +
+            '</div>' +
+            '<i class="fa-solid fa-arrow-up-right-from-square"></i>' +
+          '</a>';
+        articlesListEl.appendChild(li);
+      });
+    }
+
+    renderArticles();
+
+    // 4. Interactive Fullscreen Modal Viewer (Honors & Images)
+    var V = document.getElementById("viewer");
+    var L = ITEMS, cur = 0, view = 0, lastEl = null;
+
+    function renderView() {
+      var p = L[cur];
+      document.getElementById("vno").textContent = (cur + 1) + " / " + L.length;
+      document.getElementById("vtag").textContent = p.tag || "Achievement";
+      document.getElementById("vtitle").textContent = p.t;
+      document.getElementById("vsub").textContent = p.sub || "";
+      document.getElementById("vdesc").textContent = p.d;
+      
+      var bigEl = document.getElementById("big");
+      var currentImg = p.img[view] || p.img[0] || "";
+      var currentLabel = (p.views && p.views[view]) ? p.views[view] : p.t;
+      bigEl.innerHTML = pic(currentImg, currentLabel);
+
+      var l = document.getElementById("vlink");
+      var lWrap = document.getElementById("vlink-wrap");
+      if (p.l) {
+        l.href = p.l;
+        lWrap.style.display = "";
+      } else {
+        lWrap.style.display = "none";
+      }
+
+      var tog = document.getElementById("tog");
+      tog.innerHTML = "";
+      if (p.views && p.views.length > 1) {
+        p.views.forEach(function(vName, k) {
+          var b = document.createElement("button");
+          b.className = "btn";
+          b.type = "button";
+          b.textContent = vName;
+          b.setAttribute("aria-pressed", k === view);
+          b.onclick = function() {
+            view = k;
+            renderView();
+          };
+          tog.appendChild(b);
+        });
+      }
+    }
+
+    function openViewer(list, i) {
+      lastEl = document.activeElement;
+      L = list;
+      cur = i;
+      view = 0;
+      V.hidden = false;
+      document.body.style.overflow = "hidden";
+      renderView();
+      document.getElementById("close").focus();
+    }
+
+    function closeViewer() {
+      V.hidden = true;
+      document.body.style.overflow = "";
+      if (lastEl) lastEl.focus();
+    }
+
+    function step(d) {
+      cur = (cur + d + L.length) % L.length;
+      view = 0;
+      renderView();
+    }
+
+    document.getElementById("close").onclick = closeViewer;
+    document.getElementById("prev").onclick = function() { step(-1); };
+    document.getElementById("next").onclick = function() { step(1); };
+
+    // Dismiss when clicking modal backdrop
+    V.onclick = function(e) {
+      if (e.target === V) closeViewer();
+    };
+
+    // Keyboard navigation
+    document.addEventListener("keydown", function(e) {
+      if (!videoModal.hidden && e.key === "Escape") {
+        closeVideoModal();
+        return;
+      }
+      if (V.hidden) return;
+      if (e.key === "Escape") closeViewer();
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
+    });
+  </script>
 </body>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168691204-1"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
-
-	gtag('config', 'UA-168691204-1');
-</script>
-
 </html>
